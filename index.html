@@ -2,449 +2,211 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Convites digitais em HTML da Creativy: interações, vídeos e temas personalizados.">
 <title>Creativy · convites digitais</title>
-<meta name="description" content="A festa começa no convite. Criamos o começo de momentos inesquecíveis. Veja o portfólio e o catálogo da Creativy.">
-<meta property="og:title" content="Creativy · convites digitais">
-<meta property="og:description" content="A festa começa no convite.">
-<meta property="og:image" content="logo-creativy.png">
-<link rel="icon" href="logo-creativy.png">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&amp;family=Delicious+Handrawn&amp;family=Patrick+Hand&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&display=swap">
 <style>
-body{margin:0}
-.draw{stroke-dasharray:1;stroke-dashoffset:0;animation:draw 1.4s ease-out both}
-.tw{animation:tw 2.6s ease-in-out infinite}
-@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
-@keyframes tw{0%,100%{opacity:1}50%{opacity:.35}}
-button{font:inherit;cursor:pointer}
-a{color:inherit}
-@media (prefers-reduced-motion:reduce){.draw,.tw{animation:none}}
+:root{--ink:#5a6fc0;--ink2:#3f55a8;--mut:#6a78b8;--pk:#e98aa6;--lv:#a99be6;--lb:#9fc0f2;--gold:#c9975a}
+*{box-sizing:border-box}html,body{margin:0}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#fbe9dc;min-height:100vh;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-1;background:url(img/i01-9206dad8a1.webp) center top/cover no-repeat}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px 80px}
+.nav{display:none}.nav img{width:46px;height:46px;border-radius:50%;box-shadow:0 6px 16px -6px rgba(120,80,140,.5)}
+.nav b{font:700 30px Caveat,cursive;color:var(--ink)}
+.hero{padding:26px 0 6px;max-width:700px;margin:0 auto;text-align:center}.logo{display:block;width:min(260px,64vw);margin:0 auto 6px;border-radius:50%;filter:drop-shadow(0 16px 26px rgba(150,120,210,.4));animation:fl 6s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-8px)}}
+.eb{display:inline-block;padding:7px 14px;border-radius:999px;font:600 12px Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);background:rgba(255,255,255,.55);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.9);box-shadow:0 6px 18px -10px rgba(120,80,140,.5)}
+h1{font:700 clamp(36px,7vw,60px)/1.06 Fraunces,serif;margin:18px 0 14px;letter-spacing:-.01em;color:var(--lb);-webkit-text-stroke:6px var(--ink2);paint-order:stroke fill;text-shadow:0 6px 18px rgba(80,100,200,.25)}
+h1 i{font:700 1.12em Caveat,cursive;color:#d8cdfb;-webkit-text-stroke:6px #8a6fd0;paint-order:stroke fill;letter-spacing:0}
+.hero p{font-size:18px;line-height:1.6;color:var(--ink2);margin:0 0 22px;font-weight:500}
+.cta{all:unset;cursor:pointer;padding:14px 24px;border-radius:999px;font:600 15px Inter;color:#fff;background:linear-gradient(135deg,#8fb4f0,#b39cf0);box-shadow:0 14px 26px -12px #b8679a,inset 0 1px 0 rgba(255,255,255,.5)}
+.sec{margin:52px 0 18px;display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sec h2{font:700 44px Caveat,cursive;margin:0;color:var(--lb);-webkit-text-stroke:5px var(--ink2);paint-order:stroke fill}.sec span{color:var(--ink2);font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.ic{padding:12px 12px 18px;border-radius:24px;background:linear-gradient(150deg,rgba(255,255,255,.72),rgba(255,255,255,.34) 55%,rgba(255,240,246,.55));border:1px solid rgba(255,255,255,.9);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);box-shadow:inset 0 1px 0 #fff,0 22px 40px -22px rgba(139,100,160,.55)}
+.ph{position:relative;aspect-ratio:4/4.4;border-radius:16px;overflow:hidden;background:#000}.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(40,20,70,.5))}
+.play{position:absolute;z-index:2;right:12px;bottom:12px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.35);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.8);color:#fff;font-size:13px}
+.ph em{position:absolute;z-index:2;left:12px;top:12px;font:600 11px Inter;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.7);color:var(--ink2);backdrop-filter:blur(6px);font-style:normal}
+.ic h3{font:700 32px Caveat,cursive;margin:12px 6px 2px;color:var(--lb);-webkit-text-stroke:4px var(--ink2);paint-order:stroke fill}.ic p{margin:0 6px 14px;color:var(--ink2);font-size:15px;line-height:1.45}
+.ic button{all:unset;cursor:pointer;margin:0 6px;font:600 14px Inter;color:#6c52c4}.ic button:after{content:" →"}
+.note{margin-top:36px;padding:14px 16px;border-radius:16px;background:rgba(255,255,255,.5);backdrop-filter:blur(8px);border:1px dashed rgba(139,127,208,.5);color:var(--mut);font-size:14px}
 
-html,body{background:#f9efe5}
-#site{width:100%}
+.sec2{margin:62px 0 6px;text-align:center}.sec2 h2{font:700 46px Caveat,cursive;margin:0;color:var(--lb);-webkit-text-stroke:5px var(--ink2);paint-order:stroke fill}.sec2 p{margin:6px auto 0;max-width:560px;color:var(--ink2);font-size:16px;line-height:1.5}.sec2 .sub{font:700 28px Caveat,cursive;margin:4px 0 0;color:#8a6fd0}
+.fgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;margin-top:20px}
+.fg{position:relative;padding:20px 18px 10px;border-radius:24px;background:linear-gradient(150deg,rgba(255,255,255,.75),rgba(255,255,255,.36) 60%,rgba(255,255,255,.55));border:1px solid rgba(255,255,255,.95);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:inset 0 1px 0 #fff,0 22px 40px -24px rgba(120,100,180,.55);overflow:hidden}
+.fg:before{content:"";position:absolute;left:0;right:0;top:0;height:8px;background:var(--c)}
+.fg header{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:8px}.fg h3{font:700 32px Caveat,cursive;margin:0;color:var(--lb);-webkit-text-stroke:4px var(--ink2);paint-order:stroke fill}.fg header span{font-size:13px;color:var(--ink2)}
+.row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:11px 0;border-top:1px dashed rgba(90,111,192,.3)}
+.row b{display:block;font:600 15px Inter;color:var(--ink2)}.row small{display:block;margin-top:2px;font-size:13px;line-height:1.35;color:var(--mut)}
+.row em{font:700 22px Caveat,cursive;font-style:normal;color:#d65a80;white-space:nowrap}
+.ads{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px}
+.ad{display:flex;flex-direction:column;gap:4px;padding:18px;border-radius:22px;text-decoration:none;background:linear-gradient(150deg,rgba(255,255,255,.72),rgba(255,255,255,.34) 60%,rgba(255,240,246,.55));border:1px solid rgba(255,255,255,.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:inset 0 1px 0 #fff,0 18px 34px -22px rgba(139,100,160,.55);transition:transform .25s}
+.ad:hover{transform:translateY(-4px)}
+.ad b{font:700 17px Inter;color:var(--ink2)}.ad em{font:700 30px Caveat,cursive;font-style:normal;color:#d65a80;line-height:1}.ad small{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}.ad p{margin:6px 0 8px;font-size:14px;line-height:1.45;color:var(--ink2)}.ad span{margin-top:auto;font:600 14px Inter;color:#6c52c4}
+.fin{margin:64px 0 0;padding:34px 22px;text-align:center;border-radius:28px;background:linear-gradient(150deg,rgba(255,255,255,.78),rgba(255,255,255,.4));border:1px solid #fff;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:inset 0 1px 0 #fff,0 26px 46px -26px rgba(120,100,180,.6)}
+.fin h2{font:700 44px Caveat,cursive;margin:0 0 6px;color:var(--lb);-webkit-text-stroke:5px var(--ink2);paint-order:stroke fill}.fin p{margin:0 auto 18px;max-width:460px;color:var(--ink2);line-height:1.5}
+.fin .cta{display:inline-block;text-decoration:none}.fin .soc{margin-top:16px;font:700 22px Caveat,cursive;color:var(--ink2)}.fin .soc a{color:var(--ink2);text-decoration:none}
 
-.gwrap{position:relative;margin:0 -20px}
-.gb{position:absolute;border-radius:50%;filter:blur(34px);opacity:.8;pointer-events:none}
-.gb1{width:200px;height:200px;background:#f9b8c9;left:-50px;top:30px}.gb2{width:220px;height:220px;background:#cfe0fb;right:-60px;top:140px}.gb3{width:170px;height:170px;background:#ffe9a6;left:35%;bottom:40px}
-.gshelf{position:relative;display:flex;gap:16px;overflow-x:auto;overflow-y:hidden;perspective:1100px;perspective-origin:50% 45%;padding:34px calc(50% - 105px) 36px;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.gshelf::-webkit-scrollbar{display:none}
-.gshelf .gc{flex:none;width:210px;scroll-snap-align:center;box-sizing:border-box;position:relative;padding:12px 12px 14px!important;margin-top:0!important;border-radius:20px!important;
- background:linear-gradient(150deg,rgba(255,255,255,.72),rgba(255,255,255,.3) 55%,rgba(255,255,255,.5))!important;
- -webkit-backdrop-filter:blur(14px) saturate(1.5);backdrop-filter:blur(14px) saturate(1.5);border:1.5px solid rgba(85,64,158,.55)!important;
- box-shadow:inset 0 1.5px 0 rgba(255,255,255,.95),inset 0 -14px 24px -18px rgba(85,64,158,.25),0 18px 30px -14px rgba(85,64,158,.38)!important;
- transform:rotateY(var(--ry,0deg)) scale(var(--sc,1))!important;opacity:var(--op,1);transition:opacity .15s}
-.gshelf .gc.cen{border-color:#55409e!important;box-shadow:inset 0 1.5px 0 #fff,0 22px 36px -14px rgba(85,64,158,.5),0 0 0 4px rgba(249,184,201,.45)!important}
-.gshelf .gc img{border-radius:12px!important}
-.gshelf .gend{background:rgba(255,255,255,.28)!important;border:2px dashed #f28aa5!important;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;min-height:300px;box-shadow:none!important}
-.gnav{position:relative;display:flex;justify-content:center;gap:14px;margin-top:-6px;padding-bottom:6px}
-.garr{all:unset;box-sizing:border-box;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;cursor:pointer;border:2px solid #55409e;
- background:linear-gradient(150deg,rgba(255,255,255,.85),rgba(255,255,255,.4));-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:inset 0 1.5px 0 #fff,3px 4px 0 rgba(85,64,158,.18);transition:transform .15s}
-.garr:active{transform:scale(.92)}.garr svg{width:22px;height:22px;fill:none;stroke:#55409e;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
-.garr:disabled{opacity:.35;cursor:default}.garr:focus-visible{outline:2px solid #d65a80;outline-offset:3px}
-@media (min-width:700px){.gshelf{padding-inline:calc(50% - 125px)}.gshelf .gc{width:250px}}
-@media (prefers-reduced-motion:reduce){.gshelf .gc{transform:none!important}}
+.pastas{display:flex;flex-direction:column;gap:30px;margin-top:20px}
+.pasta{position:relative;padding:0 0 4px}
+.tab{display:inline-flex;align-items:baseline;gap:10px;padding:9px 22px 8px;border-radius:18px 18px 0 0;background:var(--c);border:1px solid rgba(255,255,255,.95);border-bottom:0;box-shadow:inset 0 1px 0 #fff;position:relative;z-index:2;margin-left:14px}
+.tab b{font:700 30px Caveat,cursive;color:var(--ink2);line-height:1}.tab span{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);opacity:.8}
+.sc{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:18px 16px 18px;margin-top:-1px;border-radius:24px;background:linear-gradient(150deg,rgba(255,255,255,.62),rgba(255,255,255,.3) 60%,rgba(255,255,255,.5));border:1px solid rgba(255,255,255,.95);border-top:6px solid var(--c);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:inset 0 1px 0 #fff,0 22px 40px -26px rgba(120,100,180,.55);scrollbar-width:thin}
+.md{flex:0 0 190px;scroll-snap-align:start;margin:0;padding:8px;border-radius:18px;background:rgba(255,255,255,.55);border:1px solid #fff;box-shadow:0 14px 24px -16px rgba(120,100,180,.6)}
+.mi{position:relative;aspect-ratio:3/4.1;border-radius:12px;overflow:hidden;background:#eee}.mi img{width:100%;height:100%;object-fit:cover;display:block}
+.mi i{position:absolute;left:8px;top:8px;font:600 10px Inter;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:rgba(255,255,255,.8);color:var(--ink2);font-style:normal}
+.md figcaption{padding:10px 4px 4px}.md b{display:block;font:600 14px/1.3 Inter;color:var(--ink2)}.md a{display:block;margin-top:7px;font:600 13px Inter;color:#6c52c4;text-decoration:none}.md small{display:block;margin-top:7px;font-size:12px;color:var(--mut)}
+
+.tagline{font:700 clamp(26px,6vw,44px)/1.14 Caveat,cursive;color:var(--lb);-webkit-text-stroke:5px var(--ink2);paint-order:stroke fill;margin:6px auto 14px;max-width:640px;text-shadow:0 6px 18px rgba(80,100,200,.25)}
+.hero{padding-bottom:0}.cloud{position:relative;max-width:560px;margin:26px auto 0;padding:40px 34px}.cloud .cl{position:absolute;inset:0;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 8px 14px rgba(120,130,210,.3))}.cloud .tagline{position:relative;margin:0;max-width:none}
+/* destaques */
+.dest{margin-top:58px;position:relative}
+.dscroll{perspective:1100px;display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:26px calc(50% - 125px) 20px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.dscroll::-webkit-scrollbar{display:none}
+.dc{flex:0 0 250px;scroll-snap-align:center;transform:rotateY(var(--ry,0deg)) scale(var(--sc,1));opacity:var(--op,1);transition:transform .15s linear;will-change:transform}
+.fl{position:relative;padding:14px 14px 18px;border-radius:26px;background:linear-gradient(150deg,rgba(255,255,255,.78),rgba(255,255,255,.4) 55%,rgba(255,240,246,.6));border:1px solid #fff;backdrop-filter:blur(16px) saturate(1.2);-webkit-backdrop-filter:blur(16px) saturate(1.2);box-shadow:inset 0 1px 0 #fff,0 26px 44px -22px rgba(120,100,180,.65);animation:bob 5.5s ease-in-out infinite}
+.dc:nth-child(2n) .fl{animation-delay:-2s}.dc:nth-child(3n) .fl{animation-delay:-3.4s}
+@keyframes bob{50%{transform:translateY(-9px)}}
+.tape{position:absolute;left:50%;top:-12px;width:92px;height:26px;transform:translateX(-50%) rotate(-3deg);background:rgba(250,228,140,.85);box-shadow:0 2px 6px rgba(0,0,0,.12);z-index:3}
+.new{position:absolute;z-index:4;right:-8px;top:18px;padding:5px 12px;font:700 11px Inter;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:linear-gradient(135deg,#e98aa6,#b39cf0);border-radius:999px;box-shadow:0 6px 14px -4px #b8679a;transform:rotate(4deg)}
+.dimg{aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:#eee;margin-top:6px}.dimg img,.dimg svg{width:100%;height:100%;object-fit:cover;object-position:50% 20%;display:block}
+.dc h3{font:700 32px Caveat,cursive;margin:12px 4px 0;color:var(--ink2)}
+.dsub{margin:0 4px 12px;font:600 17px Caveat,cursive;color:#6a8fd8}
+.more{all:unset;cursor:pointer;margin:0 4px;padding:9px 18px;border-radius:999px;font:600 14px Inter;color:#fff;background:linear-gradient(135deg,#8fb4f0,#b39cf0);box-shadow:0 10px 20px -10px #7f6bd0}
+.dnav{display:flex;justify-content:center;gap:14px;margin-top:6px}.dnav button{all:unset;cursor:pointer;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-size:20px;color:var(--ink2);background:rgba(255,255,255,.7);border:2.5px solid var(--ink2);box-shadow:0 8px 16px -8px rgba(80,90,180,.6)}.dnav button[disabled]{opacity:.35}
+/* painel pastel ligado ao card */
+.pn{position:relative;max-width:420px;margin:0 auto;height:0;overflow:visible}
+.pn .ln{position:absolute;left:50%;top:-14px;width:0;height:0;border-left:3px dotted var(--ink2);transform:translateX(-50%);transition:height .35s}
+.pn .dot{position:absolute;left:50%;top:-18px;width:12px;height:12px;border-radius:50%;background:var(--ink2);transform:translateX(-50%) scale(0);transition:transform .3s}
+.pn.on .ln{height:30px}.pn.on .dot{transform:translateX(-50%) scale(1)}
+.pn .box{position:absolute;left:0;right:0;top:16px;padding:20px 20px 18px;border-radius:24px;background:var(--pc,#fff0bf);border:2px solid #fff;box-shadow:0 24px 40px -20px rgba(120,100,180,.6);opacity:0;transform:translateY(-8px) scale(.97);pointer-events:none;transition:.3s}
+.pn.on .box{opacity:1;transform:none;pointer-events:auto}
+.pn h4{font:700 32px Caveat,cursive;margin:0;color:var(--ink2)}.pn .pr{font:700 24px Caveat,cursive;color:#d65a80}
+.pn p{margin:6px 0 10px;font-size:15px;line-height:1.45;color:var(--ink2)}.pn ul{margin:0 0 14px;padding-left:20px;font-size:14px;color:var(--ink2);line-height:1.6}
+.pn .try{all:unset;cursor:pointer;display:block;text-align:center;padding:13px 16px;border-radius:999px;font:700 14px Inter;color:#fff;background:linear-gradient(135deg,#7f9ff0,#a68ae8);box-shadow:0 12px 22px -12px #6a55c8}
+.pn .x{all:unset;cursor:pointer;position:absolute;right:14px;top:10px;font:700 18px Inter;color:var(--ink2)}
+.pn .try[hidden]{display:none}.pn .soon{margin:0;font-size:13px;text-align:center;color:var(--mut)}
+/* especialistas */
+.esp{margin-top:70px;padding:34px 22px;border-radius:30px;background:linear-gradient(150deg,rgba(255,255,255,.78),rgba(255,255,255,.42));border:1px solid #fff;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:inset 0 1px 0 #fff,0 26px 46px -26px rgba(120,100,180,.6);text-align:center}
+.esp h2{font:700 clamp(32px,6vw,44px)/1.1 Caveat,cursive;margin:0 0 8px;color:var(--lb);-webkit-text-stroke:5px var(--ink2);paint-order:stroke fill}
+.esp .lead{font:600 17px Inter;color:var(--ink2);margin:0 0 16px}
+.esp p{margin:0 auto 12px;max-width:620px;font-size:16px;line-height:1.6;color:var(--ink2)}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:18px 0 6px}.chips span{padding:8px 14px;border-radius:999px;font:600 13px Inter;color:var(--ink2);background:rgba(255,255,255,.7);border:1px solid #fff;box-shadow:0 6px 12px -8px rgba(120,100,180,.6)}
+.esp .sub{font:700 28px Caveat,cursive;margin:26px 0 12px;color:#8a6fd0}
+.esp .grid{text-align:left}
+.btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:26px}.btns a{text-decoration:none;display:inline-block;padding:14px 24px;border-radius:999px;font:700 14px Inter;letter-spacing:.06em}
+.b1{color:var(--ink2);background:rgba(255,255,255,.85);border:2px solid var(--ink2)}.b2{color:#fff;background:linear-gradient(135deg,#8fb4f0,#b39cf0);box-shadow:0 12px 22px -12px #6a55c8}
+.ad.combo{background:linear-gradient(150deg,#fff6cf,#ffe3ee);border:2px solid #fff;box-shadow:0 0 0 2px #f2c1d2,0 18px 34px -20px #b8679a}
+.cat{margin-top:70px;text-align:center}.cat h2{font:700 clamp(34px,6.4vw,48px)/1.1 Caveat,cursive;margin:0;color:var(--lb);-webkit-text-stroke:5px var(--ink2);paint-order:stroke fill}
+/* demo */
+.dm{position:fixed;inset:0;z-index:100;background:rgba(40,30,80,.6);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:14px}.dm.on{display:flex}
+.ph2{position:relative;width:min(360px,92vw);height:min(720px,88vh);border-radius:34px;padding:10px;background:#1b1530;box-shadow:0 0 0 2px #fff,0 30px 60px -20px #000}
+.ph2 iframe{width:100%;height:100%;border:0;border-radius:26px;background:#fff}
+.dm .cl{all:unset;cursor:pointer;position:absolute;right:-6px;top:-14px;width:38px;height:38px;border-radius:50%;background:#fff;color:#3f55a8;font:700 18px Inter;text-align:center;line-height:38px;box-shadow:0 6px 14px rgba(0,0,0,.4);z-index:3}
+.av{position:absolute;left:14px;right:14px;bottom:20px;z-index:4;padding:12px 14px;border-radius:16px;background:#fff6cf;color:#3f55a8;font:600 13px/1.4 Inter;box-shadow:0 12px 24px -8px #000;display:none}.av.on{display:block}
+.dmt{position:absolute;left:0;right:0;top:-34px;text-align:center;color:#fff;font:600 13px Inter}
+.stys{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:22px}
+.sty{all:unset;cursor:pointer;box-sizing:border-box;min-width:min(100%,210px);flex:1 1 200px;max-width:260px;padding:16px 18px;border-radius:22px;text-align:center;background:var(--bg);color:var(--fg);box-shadow:0 14px 22px -14px rgba(90,70,140,.55),inset 0 -4px 0 rgba(0,0,0,.07);transition:transform .2s}
+.sty:hover{transform:translateY(-3px)}.sty.on{transform:translateY(-3px);box-shadow:0 0 0 3px #fff,0 0 0 5px var(--fg),0 16px 24px -14px rgba(90,70,140,.6)}
+.sty b{display:block;font:700 34px Caveat,cursive;line-height:1}.sty span{display:block;margin-top:4px;font:600 12px Inter;letter-spacing:.06em;text-transform:uppercase;opacity:.8}
+.spn{margin-top:22px;padding:20px 16px;border-radius:26px;background:color-mix(in srgb,var(--bg) 55%,#fff);border:2px solid #fff;box-shadow:0 22px 40px -26px rgba(120,100,180,.6)}
+.spn h3{font:700 36px Caveat,cursive;margin:0 0 14px;text-align:center;color:var(--ink2)}
+.mg{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.mm{margin:0;cursor:pointer;padding:7px;border-radius:16px;background:rgba(255,255,255,.85);box-shadow:0 12px 20px -14px rgba(100,80,160,.7);transition:transform .2s}.mm:hover{transform:translateY(-4px)}
+.mm .mi{position:relative;aspect-ratio:3/4.1;border-radius:11px;overflow:hidden;background:#eee}.mm .mi img{width:100%;height:100%;object-fit:cover;display:block}
+.mm .mi i{position:absolute;left:7px;top:7px;font:600 10px Inter;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:rgba(255,255,255,.88);color:var(--ink2);font-style:normal}
+.mm figcaption{padding:8px 3px 3px}.mm b{display:block;font:600 13px/1.3 Inter;color:var(--ink2)}.mm small{display:block;margin-top:3px;font-size:11px;color:var(--mut)}
+
+.row{display:block}.row .rh{display:flex;justify-content:space-between;align-items:baseline;gap:12px}.row .rh b{font:700 16px Inter;color:var(--ink2)}.row .rh em{font:700 22px Caveat,cursive;font-style:normal;color:#d65a80;white-space:nowrap}
+.row>small{display:block;margin:5px 0 8px;font-size:13.5px;line-height:1.45;color:var(--mut)}
+.row .inc{list-style:none;margin:0 0 8px;padding:0;display:flex;flex-wrap:wrap;gap:6px}.row .inc li{padding:4px 10px;border-radius:999px;font:500 12px Inter;color:var(--ink2);background:rgba(143,169,234,.18)}
+.row .fmt{font-size:12.5px;color:var(--ink2)}.row .fmt span{font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:11px;color:var(--mut)}
+.fgs{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+
+.row .vm{all:unset;cursor:pointer;display:inline-block;margin:0 0 10px;padding:7px 16px;border-radius:999px;font:600 13px Inter;color:var(--ink2);background:#e1d6fa;box-shadow:0 6px 12px -8px rgba(90,70,140,.6)}.row .vm:hover{background:#d3c4f5}.row .vm[hidden]{display:none}
+.gl{position:fixed;inset:0;z-index:85;background:rgba(40,30,80,.7);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:14px}.gl.on{display:flex}
+.gl .bx{width:100%;max-width:560px;max-height:88vh;overflow:auto;padding:18px 16px;border-radius:26px;background:#fff6e6;box-shadow:0 0 0 2px #fff,0 26px 50px -16px #000}
+.gl .gt{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.gl .gt b{font:700 28px Caveat,cursive;color:var(--ink2)}.gl .gt button{all:unset;cursor:pointer;width:36px;height:36px;border-radius:50%;background:#fff;color:#3f55a8;font:700 20px Inter;text-align:center;line-height:36px;box-shadow:0 4px 10px rgba(0,0,0,.2)}
+.mm .det{all:unset;cursor:pointer;display:inline-block;margin-top:7px;padding:3px 11px;border-radius:999px;font:600 11px Inter;letter-spacing:.04em;color:var(--ink2);border:1px solid rgba(90,111,192,.45);background:rgba(255,255,255,.6)}.mm .det:hover{background:#fff}
+.row.hl{position:relative;border-radius:14px;border-top-color:transparent;background:#fff3b8;box-shadow:0 0 0 2px #f2cf5b,0 10px 22px -10px rgba(200,160,40,.7);margin:0 -10px;padding-left:10px;padding-right:10px;animation:hlp 1.6s ease-in-out infinite}@keyframes hlp{50%{box-shadow:0 0 0 4px #f7dd83,0 10px 26px -8px rgba(200,160,40,.8)}}
+.lb{position:fixed;inset:0;z-index:90;background:rgba(40,30,80,.72);backdrop-filter:blur(8px);display:none;flex-direction:column;align-items:center;padding:14px;overflow:auto}.lb.on{display:flex}
+.lb .top{width:100%;max-width:560px;display:flex;justify-content:space-between;align-items:center;gap:10px;color:#fff;margin-bottom:10px}.lb .top b{font:700 22px Caveat,cursive}.lb .top button{all:unset;cursor:pointer;width:38px;height:38px;border-radius:50%;background:#fff;color:#3f55a8;font:700 20px Inter;text-align:center;line-height:38px;flex:none}
+.lb img{display:block;width:100%;max-width:560px;border-radius:14px;box-shadow:0 0 0 2px #fff,0 24px 50px -16px #000}
+.lb .go{all:unset;cursor:pointer;margin:16px 0 8px;padding:14px 26px;border-radius:999px;font:700 14px Inter;color:#fff;background:linear-gradient(135deg,#7f9ff0,#a68ae8);box-shadow:0 12px 22px -12px #6a55c8}.lb .go[hidden]{display:none}
+
 </style>
-</head>
-<body>
-<div id="site">
+<div class="wrap"><section class="hero"><img class="logo" src="img/i02-6fa4eb3784.webp" alt="Creativy Digital Invitations"><div class="cloud"><svg class="cl" viewBox="0 0 400 180" preserveAspectRatio="none" aria-hidden="true"><path d="M40 24 A26.7 26.7 0 0 1 93.3 24.0 A26.7 26.7 0 0 1 146.7 24.0 A26.7 26.7 0 0 1 200.0 24.0 A26.7 26.7 0 0 1 253.3 24.0 A26.7 26.7 0 0 1 306.7 24.0 A26.7 26.7 0 0 1 360.0 24.0 A22.0 22.0 0 0 1 360.0 68.0 A22.0 22.0 0 0 1 360.0 112.0 A22.0 22.0 0 0 1 360.0 156.0 A26.7 26.7 0 0 1 306.7 156.0 A26.7 26.7 0 0 1 253.3 156.0 A26.7 26.7 0 0 1 200.0 156.0 A26.7 26.7 0 0 1 146.7 156.0 A26.7 26.7 0 0 1 93.3 156.0 A26.7 26.7 0 0 1 40.0 156.0 A22.0 22.0 0 0 1 40.0 112.0 A22.0 22.0 0 0 1 40.0 68.0 A22.0 22.0 0 0 1 40.0 24.0Z" fill="rgba(255,255,255,.28)" stroke="#8fa9ea" stroke-width="3.2" stroke-linejoin="round" vector-effect="non-scaling-stroke"/></svg><div class="tagline">A festa começa no convite, e nós criamos o início de momentos inesquecíveis.</div></div></section><section class="dest" id="destaques"><div class="sec2" style="margin-top:46px"><h2>Destaques</h2><p>Toque em “Saiba mais” para ver o que cada modelo inclui e experimente o convite você mesma.</p></div>
+<div class="dscroll" id="ds"><article class="dc" data-i="0" data-col="#fbdcc6" data-fmt="Supreme" data-price="a partir de R$ 220,00" data-demo="https://creativyconvites.com.br/homemaranha/" data-desc="Convite interativo em que o convidado joga a teia e puxa o envelope da parede de tijolinho." data-inc="HTML totalmente personalizado|interação com a câmera do celular|telas, animações e efeitos|música incluída" data-name="Homem-Aranha"><div class="fl"><div class="tape"></div><span class="new">novidade</span><div class="dimg"><img src="img/i03-8b83d96c66.webp" alt=""></div><h3>Homem-Aranha</h3><p class="dsub">jogue a teia pela câmera</p><button class="more" type="button">Saiba mais</button></div></article><article class="dc" data-i="1" data-col="#fff0bf" data-fmt="Interativo Duo" data-price="R$ 90,00" data-demo="" data-desc="Capa clicável com a aniversariante que abre a página com data, local e botões." data-inc="capa de abertura|página principal com as informações|botões interativos|música incluída" data-name="Jardim Encantado"><div class="fl"><div class="tape"></div><div class="dimg"><img src="img/i04-81bb9e8ecf.webp" alt=""></div><h3>Jardim Encantado</h3><p class="dsub">capa clicável com a aniversariante</p><button class="more" type="button">Saiba mais</button></div></article><article class="dc" data-i="2" data-col="#e1d6fa" data-fmt="Interativo Plus" data-price="R$ 140,00" data-demo="https://creativyconvites.com.br/ConviteRapunzel-/" data-desc="Um envelope com selo que abre ao toque e revela o convite." data-inc="capa de abertura|animação ou vídeo de abertura|página principal e botões|música incluída" data-name="Rapunzel"><div class="fl"><div class="tape"></div><div class="dimg"><img src="img/i05-185d2b1cf4.webp" alt=""></div><h3>Rapunzel</h3><p class="dsub">envelope com selo que abre</p><button class="more" type="button">Saiba mais</button></div></article><article class="dc" data-i="3" data-col="#fbdcc6" data-fmt="Supreme" data-price="a partir de R$ 220,00" data-demo="https://creativyconvites.com.br/Diogo4anos/" data-desc="A lupa revela pegadas e portas misteriosas até chegar ao convite." data-inc="HTML totalmente personalizado|telas, animações, vídeos e jogos|escolhas e efeitos|música incluída" data-name="Scooby-Doo"><div class="fl"><div class="tape"></div><div class="dimg"><img src="img/i06-68b7875a09.webp" alt=""></div><h3>Scooby-Doo</h3><p class="dsub">pistas e portas misteriosas</p><button class="more" type="button">Saiba mais</button></div></article><article class="dc" data-i="4" data-col="#cdeede" data-fmt="Interativo Personalizado" data-price="R$ 49,90" data-demo="" data-desc="Convite no tema da festa com botões de confirmação de presença e lista de presentes." data-inc="criado no seu tema|botões clicáveis|informações personalizadas" data-name="Moranguinho"><div class="fl"><div class="tape"></div><div class="dimg"><img src="img/i07-60a68dc63b.webp" alt=""></div><h3>Moranguinho</h3><p class="dsub">botões de presença e presentes</p><button class="more" type="button">Saiba mais</button></div></article><article class="dc" data-i="5" data-col="#e1d6fa" data-fmt="Interativo Plus" data-price="R$ 140,00" data-demo="https://creativyconvites.com.br/ConviteDaniella/" data-desc="Envelope e vídeo de abertura que levam a uma página de informações em pergaminho." data-inc="capa de abertura|animação ou vídeo de abertura|página principal e botões|música incluída" data-name="Harry Potter"><div class="fl"><div class="tape"></div><div class="dimg"><img src="img/i08-5974fc577e.webp" alt=""></div><h3>Harry Potter</h3><p class="dsub">mapa em pergaminho</p><button class="more" type="button">Saiba mais</button></div></article></div>
+<div class="pn" id="pn"><i class="ln"></i><i class="dot"></i><div class="box"><button class="x" id="px" aria-label="Fechar">×</button><h4 id="pt"></h4><div class="pr" id="pp"></div><p id="pd"></p><ul id="pl"></ul><button class="try" id="ptry">Mexer no convite</button><p class="soon" id="psoon" hidden>Em breve você poderá experimentar este convite.</p></div></div>
+<div class="dnav" id="dn"><button id="dprev" aria-label="Anterior">‹</button><button id="dnext" aria-label="Próximo">›</button></div></section><section class="cat" id="catalogo"><h2>Catálogo e modelos Creativy convites</h2></section>
+<div class="stys"><button class="sty" data-s="infantil" style="--bg:#fbe7a1;--fg:#6b5a14"><b>Infantil</b><span>aniversários e festinhas · 14 modelos</span></button><button class="sty" data-s="adulto" style="--bg:#d9ccf7;--fg:#40307a"><b>Adulto</b><span>aniversários e festas · 4 modelos</span></button><button class="sty" data-s="debutantes" style="--bg:#bcd6fa;--fg:#203f80"><b>Debutantes</b><span>15 anos · 3 modelos</span></button></div><div class="spn" id="sp-infantil" hidden style="--bg:#fbe7a1"><h3>Infantil</h3><div class="mg"><figure class="mm" data-n="Chapeuzinho Vermelho · Luiza" data-fmt="Tradicional" data-demo=""><div class="mi"><img src="img/i09-de25fb9cc1.webp" alt=""><i>Tradicional</i></div><figcaption><b>Chapeuzinho Vermelho · Luiza</b><small>toque para ver em tamanho normal</small><button type="button" class="det" data-f="Tradicional">detalhes</button></figcaption></figure><figure class="mm" data-n="Pokémon · Henrique" data-fmt="Tradicional" data-demo=""><div class="mi"><img src="img/i10-40c79da78c.webp" alt=""><i>Tradicional</i></div><figcaption><b>Pokémon · Henrique</b><small>toque para ver em tamanho normal</small><button type="button" class="det" data-f="Tradicional">detalhes</button></figcaption></figure><figure class="mm" data-n="Hello Kitty · Melissa" data-fmt="Tradicional" data-demo=""><div class="mi"><img src="img/i11-942a35a5e3.webp" alt=""><i>Tradicional</i></div><figcaption><b>Hello Kitty · Melissa</b><small>toque para ver em tamanho normal</small><button type="button" class="det" data-f="Tradicional">detalhes</button></figcaption></figure><figure class="mm" data-n="Fundo do Mar · Ísis" data-fmt="Tradicional" data-demo=""><div class="mi"><img src="img/i12-4a43e38adc.webp" alt=""><i>Tradicional</i></div><figcaption><b>Fundo do Mar · Ísis</b><small>toque para ver em tamanho normal</small><button type="button" class="det" data-f="Tradicional">detalhes</button></figcaption></figure><figure class="mm" data-n="Hot Wheels · Matteo" data-fmt="Tradicional" data-demo=""><div class="mi"><img src="img/i13-eb6bd0f29b.webp" alt=""><i>Tradicional</i></div><figcaption><b>Hot Wheels · Matteo</b><small>toque para ver em tamanho normal</small><button type="button" class="det" data-f="Tradicional">detalhes</button></figcaption></figure><figure class="mm" data-n="Primeira Volta ao Sol · Miguel" data-fmt="Tradicional" data-demo=""><div class="mi"><img src="img/i14-7aece00a09.webp" alt=""><i>Tradicional</i></div><figcaption><b>Primeira Volta ao Sol · Miguel</b><small>toque para ver em tamanho normal</small><button type="button" class="det" data-f="Tradicional">detalhes</button></figcaption></figure><figure class="mm" data-n="Cerejinhas · Sophia, 10 anos" data-fmt="Tradicional" data-demo=""><div class="mi"><img src="img/i15-6252b5c3a6.webp" alt=""><i>Tradicional</i></div><figcaption><b>Cerejinhas · Sophia, 10 anos</b><small>toque para ver em tamanho normal</small><button type="button" class="det" data-f="Tradicional">detalhes</button></figcaption></figure><figure class="mm" data-n="Era da Pedra · Kauã, 7 anos" data-fmt="Tradicional" data-demo=""><div class="mi"><img src="img/i16-83a9e98b4a.webp" alt=""><i>Tradicional</i></div><figcaption><b>Era da Pedra · Kauã, 7 anos</b><small>toque para ver em tamanho normal</small><button type="button" class="det" data-f="Tradicional">detalhes</button></figcaption></figure><figure class="mm" data-n="Barbie · Maria Laura" data-fmt="Tradicional" data-demo=""><div class="mi"><img src="img/i17-b2ead79994.webp" alt=""><i>Tradicional</i></div><figcaption><b>Barbie · Maria Laura</b><small>toque para ver em tamanho normal</small><button type="button" class="det" data-f="Tradicional">detalhes</button></figcaption></figure><figure class="mm" data-n="Ursinho no bosque · Pietro, 3 anos" data-fmt="Tradicional" data-demo=""><div class="mi"><img src="img/i18-1b50f9f729.webp" alt=""><i>Tradicional</i></div><figcaption><b>Ursinho no bosque · Pietro, 3 anos</b><small>toque para ver em tamanho normal</small><button type="button" class="det" data-f="Tradicional">detalhes</button></figcaption></figure><figure class="mm" data-n="Pequeno Príncipe · Lucas, 2 anos" data-fmt="Tradicional" data-demo=""><div class="mi"><img src="img/i19-4a827a1776.webp" alt=""><i>Tradicional</i></div><figcaption><b>Pequeno Príncipe · Lucas, 2 anos</b><small>toque para ver em tamanho normal</small><button type="button" class="det" data-f="Tradicional">detalhes</button></figcaption></figure><figure class="mm" data-n="Scooby-Doo · Diogo, 4 anos" data-fmt="Supreme" data-demo="https://creativyconvites.com.br/Diogo4anos/"><div class="mi"><img src="img/i20-9666f9279d.webp" alt=""><i>Supreme</i></div><figcaption><b>Scooby-Doo · Diogo, 4 anos</b><small>toque para abrir e mexer</small><button type="button" class="det" data-f="Supreme">detalhes</button></figcaption></figure><figure class="mm" data-n="Os Incríveis · Kaleb, 4 anos" data-fmt="Supreme" data-demo="https://creativyconvites.com.br/Kaleb4anos/"><div class="mi"><img src="img/i21-e13ff16fad.webp" alt=""><i>Supreme</i></div><figcaption><b>Os Incríveis · Kaleb, 4 anos</b><small>toque para abrir e mexer</small><button type="button" class="det" data-f="Supreme">detalhes</button></figcaption></figure><figure class="mm" data-n="Homem-Aranha · jogue a teia" data-fmt="Supreme" data-demo="https://creativyconvites.com.br/homemaranha/"><div class="mi"><img src="img/i22-5f09c00870.webp" alt=""><i>Supreme</i></div><figcaption><b>Homem-Aranha · jogue a teia</b><small>toque para abrir e mexer</small><button type="button" class="det" data-f="Supreme">detalhes</button></figcaption></figure></div></div><div class="spn" id="sp-adulto" hidden style="--bg:#d9ccf7"><h3>Adulto</h3><div class="mg"><figure class="mm" data-n="Cerejas vintage · Léia, 40 anos" data-fmt="Tradicional" data-demo=""><div class="mi"><img src="img/i23-b1b7f7ba3c.webp" alt=""><i>Tradicional</i></div><figcaption><b>Cerejas vintage · Léia, 40 anos</b><small>toque para ver em tamanho normal</small><button type="button" class="det" data-f="Tradicional">detalhes</button></figcaption></figure><figure class="mm" data-n="Noite através do tempo · Veruska, 50 anos" data-fmt="Animado" data-demo="https://creativyconvites.com.br/Veruska50/"><div class="mi"><img src="img/i24-3388d593d3.webp" alt=""><i>Animado</i></div><figcaption><b>Noite através do tempo · Veruska, 50 anos</b><small>toque para abrir e mexer</small><button type="button" class="det" data-f="Animado">detalhes</button></figcaption></figure><figure class="mm" data-n="Halloween · escape game" data-fmt="Supreme" data-demo="https://creativyconvites.com.br/Convite-Hallowen/"><div class="mi"><img src="img/i25-10f5c3f33a.webp" alt=""><i>Supreme</i></div><figcaption><b>Halloween · escape game</b><small>toque para abrir e mexer</small><button type="button" class="det" data-f="Supreme">detalhes</button></figcaption></figure><figure class="mm" data-n="Harry Potter · Daniella" data-fmt="Interativo Plus" data-demo="https://creativyconvites.com.br/ConviteDaniella/"><div class="mi"><img src="img/i26-94e020490e.webp" alt=""><i>Interativo Plus</i></div><figcaption><b>Harry Potter · Daniella</b><small>toque para abrir e mexer</small><button type="button" class="det" data-f="Interativo Plus">detalhes</button></figcaption></figure></div></div><div class="spn" id="sp-debutantes" hidden style="--bg:#bcd6fa"><h3>Debutantes</h3><div class="mg"><figure class="mm" data-n="Bridgerton · Baile do Diamante, 15 anos" data-fmt="Supreme" data-demo="https://creativyconvites.com.br/Beatriz15anos/"><div class="mi"><img src="img/i27-e553c2febf.webp" alt=""><i>Supreme</i></div><figcaption><b>Bridgerton · Baile do Diamante, 15 anos</b><small>toque para abrir e mexer</small><button type="button" class="det" data-f="Supreme">detalhes</button></figcaption></figure><figure class="mm" data-n="Rapunzel · 15 anos" data-fmt="Interativo Plus" data-demo="https://creativyconvites.com.br/ConviteRapunzel-/"><div class="mi"><img src="img/i28-fe3fae00b0.webp" alt=""><i>Interativo Plus</i></div><figcaption><b>Rapunzel · 15 anos</b><small>toque para abrir e mexer</small><button type="button" class="det" data-f="Interativo Plus">detalhes</button></figcaption></figure><figure class="mm" data-n="Tiana · Isabella, 15 anos" data-fmt="Extenso" data-demo=""><div class="mi"><img src="img/i29-5b2858fd5e.webp" alt=""><i>Extenso</i></div><figcaption><b>Tiana · Isabella, 15 anos</b><small>toque para ver em tamanho normal</small><button type="button" class="det" data-f="Extenso">detalhes</button></figcaption></figure></div></div>
+<div class="sec2"><h2>Modelos e valores</h2><p>Escolha o formato que combina com a sua festa. Todos são feitos no tema que você quiser.</p></div>
+<div class="fgs"><article class="fg" style="--c:#cfe0fb"><header><h3>Estáticos</h3><span>convite em imagem</span></header><div class="row" data-f="Tradicional Pronto"><div class="rh"><b>Tradicional Pronto</b><em>R$ 15,00</em></div><small>Modelo já pronto. Trocamos apenas nome, data e local; a arte e a estrutura do convite permanecem iguais.</small><button type="button" class="vm" data-f="Tradicional Pronto">Ver modelo</button><ul class="inc"><li>arte e estrutura do modelo</li><li>troca de nome, data e local</li></ul><div class="fmt"><span>Formato:</span> imagem (convite digital estático)</div></div><div class="row" data-f="Tradicional"><div class="rh"><b>Tradicional</b><em>R$ 25,00</em></div><small>Convite digital estático criado de acordo com o tema da sua festa e com as informações do seu evento.</small><button type="button" class="vm" data-f="Tradicional">Ver modelo</button><ul class="inc"><li>feito no tema da sua festa</li><li>informações do seu evento</li></ul><div class="fmt"><span>Formato:</span> imagem (convite digital estático)</div></div></article><article class="fg" style="--c:#e1d6fa"><header><h3>Interativos</h3><span>com botões clicáveis</span></header><div class="row" data-f="Interativo Pronto"><div class="rh"><b>Interativo Pronto</b><em>R$ 30,00</em></div><small>Modelo interativo já pronto. Trocamos as informações do evento e mantemos a estrutura original, com botões clicáveis.</small><button type="button" class="vm" data-f="Interativo Pronto">Ver modelo</button><ul class="inc"><li>estrutura do modelo</li><li>troca das informações do evento</li><li>botões clicáveis</li></ul><div class="fmt"><span>Formato:</span> link (página interativa)</div></div><div class="row" data-f="Interativo Personalizado"><div class="rh"><b>Interativo Personalizado</b><em>R$ 49,90</em></div><small>Convite interativo criado no tema da sua festa, com botões clicáveis e informações personalizadas.</small><button type="button" class="vm" data-f="Interativo Personalizado">Ver modelo</button><ul class="inc"><li>criado no seu tema</li><li>botões clicáveis</li><li>informações personalizadas</li></ul><div class="fmt"><span>Formato:</span> link (página interativa)</div></div><div class="row" data-f="Interativo Duo"><div class="rh"><b>Interativo Duo</b><em>R$ 90,00</em></div><small>Uma capa de abertura que leva para a página principal, com as informações do evento e botões interativos.</small><button type="button" class="vm" data-f="Interativo Duo">Ver modelo</button><ul class="inc"><li>capa de abertura</li><li>página principal com as informações</li><li>botões interativos</li><li>música incluída</li></ul><div class="fmt"><span>Formato:</span> link (página interativa)</div></div><div class="row" data-f="Interativo Plus"><div class="rh"><b>Interativo Plus</b><em>R$ 140,00</em></div><small>Capa de abertura, animação ou vídeo de abertura e a página principal com botões interativos.</small><button type="button" class="vm" data-f="Interativo Plus">Ver modelo</button><ul class="inc"><li>capa de abertura</li><li>animação ou vídeo de abertura</li><li>página principal e botões</li><li>música incluída</li></ul><div class="fmt"><span>Formato:</span> link (página interativa)</div></div></article><article class="fg" style="--c:#cdeede"><header><h3>Vídeo e animação</h3><span>movimento e música</span></header><div class="row" data-f="Animadinho Pronto"><div class="rh"><b>Animadinho Pronto</b><em>R$ 29,90</em></div><small>Modelo animado já pronto, com o vídeo do tema integrado à página de informações. Trocamos apenas nome, data e local, mantendo a arte e a animação.</small><button type="button" class="vm" data-f="Animadinho Pronto">Ver modelo</button><ul class="inc"><li>vídeo do tema integrado na página</li><li>troca de nome, data e local</li><li>música incluída</li></ul><div class="fmt"><span>Formato:</span> vídeo (MP4). Com botões clicáveis (+ R$ 15,00), vira link</div></div><div class="row" data-f="Animadinho Personalizado"><div class="rh"><b>Animadinho Personalizado</b><em>R$ 59,90</em></div><small>Convite criado no tema da festa, com o vídeo do tema integrado à página de informações.</small><button type="button" class="vm" data-f="Animadinho Personalizado">Ver modelo</button><ul class="inc"><li>vídeo do tema integrado na página</li><li>criado no tema da sua festa</li><li>botões opcionais (+ R$ 15,00)</li><li>música incluída</li></ul><div class="fmt"><span>Formato:</span> vídeo (MP4). Com botões clicáveis, vira link</div></div><div class="row" data-f="Vídeo"><div class="rh"><b>Vídeo</b><em>R$ 119,00</em></div><small>Convite produzido 100% em vídeo, de até 1 minuto, com animações, transições e elementos personalizados.</small><button type="button" class="vm" data-f="Vídeo">Ver modelo</button><ul class="inc"><li>100% em vídeo, até 1 minuto</li><li>animações, transições e elementos personalizados</li><li>música incluída</li></ul><div class="fmt"><span>Formato:</span> vídeo</div></div><div class="row" data-f="Animado"><div class="rh"><b>Animado</b><em>R$ 159,90</em></div><small>Capa de abertura, até 3 cenas animadas e uma página de informações com botões clicáveis.</small><button type="button" class="vm" data-f="Animado">Ver modelo</button><ul class="inc"><li>capa de abertura</li><li>até 3 cenas animadas</li><li>página de informações com botões</li><li>música incluída</li></ul><div class="fmt"><span>Formato:</span> link (página interativa)</div></div></article><article class="fg" style="--c:#fff0bf"><header><h3>Scrapbook e livrinho</h3><span>páginas para explorar</span></header><div class="row" data-f="Extenso"><div class="rh"><b>Extenso</b><em>R$ 110,00</em></div><small>Capa de abertura e uma página longa em que cada seção traz uma informação, como data, local, dress code, dicas de presente, contagem regressiva e confirmação de presença, cada uma no seu próprio papel.</small><button type="button" class="vm" data-f="Extenso">Ver modelo</button><ul class="inc"><li>capa animada que abre ao toque</li><li>uma seção para cada informação</li><li>contagem regressiva e confirmação de presença</li><li>música incluída</li></ul><div class="fmt"><span>Formato:</span> link (página longa)</div></div><div class="row" data-f="Scrapbook"><div class="rh"><b>Scrapbook</b><em>R$ 120,00</em></div><small>Convite inspirado em scrapbook, com colagens, elementos decorativos e uma composição artística personalizada.</small><button type="button" class="vm" data-f="Scrapbook">Ver modelo</button><ul class="inc"><li>colagens e elementos decorativos</li><li>composição artística personalizada</li><li>capa + página principal</li><li>música incluída</li></ul><div class="fmt"><span>Formato:</span> link (página interativa)</div></div><div class="row" data-f="Scrapbook Scroll"><div class="rh"><b>Scrapbook Scroll</b><em>R$ 169,00</em></div><small>Convite em scroll vertical: capa e uma composição contínua de scrapbook para o convidado explorar ao rolar a página.</small><button type="button" class="vm" data-f="Scrapbook Scroll">Ver modelo</button><ul class="inc"><li>scroll vertical</li><li>capa + composição contínua</li><li>explora ao rolar a página</li><li>música incluída</li></ul><div class="fmt"><span>Formato:</span> link (página de rolagem)</div></div><div class="row" data-f="Livrinho"><div class="rh"><b>Livrinho</b><em>R$ 180,00</em></div><small>Convite em formato de livrinho digital, com capa e páginas ilustradas seguindo a identidade visual e o tema da festa.</small><button type="button" class="vm" data-f="Livrinho">Ver modelo</button><ul class="inc"><li>formato de livrinho digital</li><li>capa e páginas ilustradas</li><li>identidade visual do tema da festa</li><li>música incluída</li></ul><div class="fmt"><span>Formato:</span> link (livrinho digital)</div></div></article><article class="fg" style="--c:#fbdcc6"><header><h3>Sob medida</h3><span>a experiência completa</span></header><div class="row" data-f="Supreme"><div class="rh"><b>Supreme</b><em>a partir de R$ 220,00</em></div><small>Nossa experiência mais completa: HTML totalmente personalizado, com múltiplas telas, animações, vídeos, jogos, escolhas, efeitos, histórias e outras interações. O valor varia conforme a complexidade e os recursos escolhidos.</small><button type="button" class="vm" data-f="Supreme">Ver modelo</button><ul class="inc"><li>HTML totalmente personalizado</li><li>telas, animações, vídeos, jogos e escolhas</li><li>valor varia pela complexidade</li><li>música incluída</li></ul><div class="fmt"><span>Formato:</span> link (experiência interativa)</div></div></article></div>
 
-<div style="position:relative;overflow:hidden;background:#f9efe5;font-family:'Patrick Hand','Caveat',system-ui,sans-serif;color:#55409e">
-
-<div style="position:relative;box-sizing:border-box;min-height:716px;padding:100px 20px 40px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center">
-<img src="laco.png" alt="" style="position:absolute;pointer-events:none;user-select:none;left:0;top:0;width:120px">
-<img src="selo.png" alt="" style="position:absolute;pointer-events:none;user-select:none;right:0;top:14px;width:60px">
-<img src="baloes.png" alt="" style="position:absolute;pointer-events:none;user-select:none;right:0;top:250px;width:64px">
-<img src="clipe.png" alt="" style="position:absolute;pointer-events:none;user-select:none;left:8px;top:440px;width:36px">
-<img src="xadrez.png" alt="" style="position:absolute;pointer-events:none;user-select:none;left:0;bottom:0;width:104px">
-<img src="fita.png" alt="" style="position:absolute;pointer-events:none;user-select:none;right:0;bottom:0;width:150px">
-<img src="coracao1.png" alt="" style="position:absolute;pointer-events:none;user-select:none;left:24px;top:238px;width:22px">
-<img src="estrela2.png" alt="" style="position:absolute;pointer-events:none;user-select:none;left:46px;top:398px;width:24px">
-<img src="estrela4.png" alt="" style="position:absolute;pointer-events:none;user-select:none;right:40px;top:196px;width:26px">
-<img src="coracao3.png" alt="" style="position:absolute;pointer-events:none;user-select:none;right:28px;top:520px;width:20px">
-<img src="logo-creativy.png" alt="Creativy, convites digitais" style="position:relative;width:224px;height:224px">
-<div style="position:relative;margin-top:6px;font-family:'Caveat',cursive;font-weight:700;font-size:28px;color:#3f6fc4;transform:rotate(-3deg)">psiu, vem ver!</div>
-<div style="position:relative;font-family:'Delicious Handrawn',cursive;font-size:48px;line-height:1.05;color:#55409e">meu portfólio</div>
-<svg viewBox="0 0 240 20" width="240" height="20" fill="none" stroke="#f28aa5" stroke-width="5" stroke-linecap="round" style="position:relative" aria-hidden="true"><path class="draw" pathLength="1" d="M4 12 C40 2 76 18 116 8 S190 16 236 5"/></svg>
-<div style="position:relative;margin-top:14px;max-width:260px;font-family:'Delicious Handrawn',cursive;font-size:30px;line-height:1.02;color:#d65a80">A festa começa no convite</div>
-<div style="position:relative;margin-top:10px;max-width:250px;font-size:18px;line-height:1.25;color:#55409e">Criamos o começo de momentos inesquecíveis.</div>
-<div style="position:relative;margin-top:16px;font-family:'Caveat',cursive;font-weight:700;font-size:22px;color:#3f6fc4">role pra baixo</div>
-</div>
-
-<div id="trabalhos" style="position:relative;padding:124px max(20px, calc(50% - 230px)) 170px;display:flex;flex-direction:column;gap:26px">
-<img src="xadrez.png" alt="" style="position:absolute;pointer-events:none;user-select:none;left:0;top:-1px;width:104px;transform:scaleY(-1)">
-<img src="fita.png" alt="" style="position:absolute;pointer-events:none;user-select:none;right:0;top:-1px;width:150px;transform:scaleY(-1)">
-
-<div style="position:relative;display:flex;align-items:center;gap:14px">
-<img src="estrela3.png" alt="" style="position:absolute;pointer-events:none;user-select:none;right:2px;top:-6px;width:26px">
-<img src="coracao2.png" alt="" style="position:absolute;pointer-events:none;user-select:none;right:44px;top:62px;width:22px">
-<svg viewBox="0 0 56 66" width="56" height="66" fill="none" stroke="#55409e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-<ellipse cx="18" cy="20" rx="12" ry="15" fill="#9dbdf0" stroke="none" transform="translate(2 2)"/><ellipse cx="18" cy="20" rx="12" ry="15"/>
-<ellipse cx="38" cy="18" rx="12" ry="15" fill="#f6a9b8" stroke="none" transform="translate(2 2)"/><ellipse cx="38" cy="18" rx="12" ry="15"/>
-<ellipse cx="28" cy="26" rx="11" ry="14" fill="#c3b0f0" stroke="none" transform="translate(2 2)"/><ellipse cx="28" cy="26" rx="11" ry="14"/>
-<path d="M18 35 C22 48 26 54 29 62 M38 33 C34 46 31 54 29 62 M28 40 V62"/>
-</svg>
-<div style="min-width:0">
-<div style="position:relative;display:inline-block;font-family:'Delicious Handrawn',cursive;font-size:42px;line-height:1.05;color:#55409e"><span style="position:absolute;left:-4px;right:-6px;bottom:2px;height:16px;background:#ffe9a6;transform:rotate(-1.5deg);border-radius:255px 15px 225px 15px/15px 225px 15px 255px;z-index:0"></span><span style="position:relative">Destaques</span></div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:23px;line-height:1.1;color:#3f6fc4;margin-top:6px">alguns convites do nosso portfólio</div>
-</div>
-</div>
-
-<div class="gwrap"><i class="gb gb1"></i><i class="gb gb2"></i><i class="gb gb3"></i><div class="gshelf" id="gsh">
-
-<div class="gc" role="button" tabindex="0" aria-label="Ver o convite Jardim Encantado maior" onclick="A.zoom(0)" style="cursor:zoom-in;position:relative;display:block;text-decoration:none;background:#fffdf8;border:2px solid #55409e;border-radius:6px 12px 8px 12px;padding:10px 10px 12px;box-shadow:4px 5px 0 rgba(85,64,158,.16);transform:rotate(-1.6deg)">
-<div style="position:absolute;left:34px;top:-12px;width:70px;height:24px;background:rgba(255,225,130,.8);transform:rotate(-5deg)"></div>
-<img src="card-jardim.jpg" alt="Convite Jardim Encantado" style="display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:8px">
-<div style="font-family:'Delicious Handrawn',cursive;font-size:25px;line-height:1.1;margin-top:10px;color:#55409e">Jardim Encantado</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:20px;line-height:1.1;color:#3f6fc4">capa clicável com a aniversariante</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:17px;line-height:1;color:#d65a80;margin-top:4px">toque para ampliar</div>
-</div>
-
-<div class="gc" role="button" tabindex="0" aria-label="Ver o convite Rapunzel maior" onclick="A.zoom(1)" style="cursor:zoom-in;position:relative;display:block;text-decoration:none;">
-<div style="position:absolute;right:30px;top:-12px;width:64px;height:24px;background:rgba(249,184,201,.85);transform:rotate(6deg)"></div>
-<img src="card-rapunzel.jpg" alt="Convite Rapunzel" style="display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:8px">
-<div style="font-family:'Delicious Handrawn',cursive;font-size:25px;line-height:1.1;margin-top:10px;color:#55409e">Rapunzel</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:20px;line-height:1.1;color:#3f6fc4">envelope com selo que abre</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:17px;line-height:1;color:#d65a80;margin-top:4px">toque para ampliar</div>
-</div>
-
-<div class="gc" role="button" tabindex="0" aria-label="Ver o convite Scooby-Doo maior" onclick="A.zoom(2)" style="cursor:zoom-in;position:relative;display:block;text-decoration:none;background:#fffdf8;border:2px solid #55409e;border-radius:8px 12px 6px 12px;padding:10px 10px 12px;box-shadow:4px 5px 0 rgba(85,64,158,.16);transform:rotate(1.2deg)">
-<div style="position:absolute;left:46px;top:-12px;width:72px;height:24px;background:rgba(190,215,250,.9);transform:rotate(4deg)"></div>
-<img src="card-scooby.jpg" alt="Convite Scooby-Doo" style="display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:8px">
-<div style="font-family:'Delicious Handrawn',cursive;font-size:25px;line-height:1.1;margin-top:10px;color:#55409e">Scooby-Doo</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:20px;line-height:1.1;color:#3f6fc4">pistas e portas misteriosas</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:17px;line-height:1;color:#d65a80;margin-top:4px">toque para ampliar</div>
-</div>
-
-<div class="gc" role="button" tabindex="0" aria-label="Ver o convite Moranguinho maior" onclick="A.zoom(3)" style="cursor:zoom-in;position:relative;display:block;text-decoration:none;">
-<div style="position:absolute;right:36px;top:-12px;width:66px;height:24px;background:rgba(255,225,130,.8);transform:rotate(-6deg)"></div>
-<img src="card-moranguinho.jpg" alt="Convite Moranguinho" style="display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:8px">
-<div style="font-family:'Delicious Handrawn',cursive;font-size:25px;line-height:1.1;margin-top:10px;color:#55409e">Moranguinho</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:20px;line-height:1.1;color:#3f6fc4">botões de presença e presentes</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:17px;line-height:1;color:#d65a80;margin-top:4px">toque para ampliar</div>
-</div>
-
-<div class="gc" role="button" tabindex="0" aria-label="Ver o convite Harry Potter maior" onclick="A.zoom(4)" style="cursor:zoom-in;position:relative;display:block;text-decoration:none;background:#fffdf8;border:2px solid #55409e;border-radius:6px 12px 8px 12px;padding:10px 10px 12px;box-shadow:4px 5px 0 rgba(85,64,158,.16);transform:rotate(-1deg)">
-<div style="position:absolute;left:40px;top:-12px;width:68px;height:24px;background:rgba(249,184,201,.85);transform:rotate(-4deg)"></div>
-<img src="card-harry.jpg" alt="Convite Harry Potter" style="display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:8px">
-<div style="font-family:'Delicious Handrawn',cursive;font-size:25px;line-height:1.1;margin-top:10px;color:#55409e">Harry Potter</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:20px;line-height:1.1;color:#3f6fc4">mapa em pergaminho</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:17px;line-height:1;color:#d65a80;margin-top:4px">toque para ampliar</div>
-</div>
-
-<div class="gc gend" style="position:relative;box-sizing:border-box;border:3px dashed #f28aa5;border-radius:255px 15px 225px 15px/15px 225px 15px 255px;padding:20px 14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;margin-top:18px;transform:rotate(1.4deg)">
-<svg viewBox="0 0 48 44" width="52" height="48" fill="none" stroke="#55409e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 40 C8 28 4 18 10 11 C16 5 23 8 24 14 C25 8 32 5 38 11 C44 18 40 28 24 40 Z" fill="#f9b8c9" transform="translate(2 2)" stroke="none"/><path d="M24 40 C8 28 4 18 10 11 C16 5 23 8 24 14 C25 8 32 5 38 11 C44 18 40 28 24 40 Z"/></svg>
-<div style="font-family:'Delicious Handrawn',cursive;font-size:26px;line-height:1.1;color:#55409e">o seu pode ser o próximo</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:20px;line-height:1.1;color:#d65a80">qualquer tema, do seu jeito</div>
-</div>
-</div>
-<div class="gnav"><button type="button" class="garr gl" aria-label="Convites anteriores"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" class="garr gr" aria-label="Próximos convites"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button></div>
-</div>
-
-<div style="position:relative;display:flex;align-items:center;gap:14px;margin-top:20px">
-<img src="clipe.png" alt="" style="position:absolute;pointer-events:none;user-select:none;right:-4px;top:-26px;width:38px">
-<img src="coracao5.png" alt="" style="position:absolute;pointer-events:none;user-select:none;right:46px;top:64px;width:20px">
-<svg viewBox="0 0 56 50" width="56" height="50" fill="none" stroke="#55409e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12 H20 L25 18 H52 V44 H4 Z" fill="#f9d1dc" stroke="none" transform="translate(2 2)"/><path d="M4 12 H20 L25 18 H52 V44 H4 Z"/><path d="M4 22 H52"/></svg>
-<div style="min-width:0">
-<div style="position:relative;display:inline-block;font-family:'Delicious Handrawn',cursive;font-size:38px;line-height:1.05;color:#55409e"><span style="position:absolute;left:-4px;right:-6px;bottom:2px;height:14px;background:#cfe0fb;transform:rotate(-1deg);border-radius:255px 15px 225px 15px/15px 225px 15px 255px"></span><span style="position:relative">catálogo Creativy</span></div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:23px;line-height:1.1;color:#3f6fc4;margin-top:6px">primeiro escolha o tipo de festa</div>
-</div>
-</div>
-
-<div id="cats" style="display:flex;flex-direction:column;gap:26px;padding-top:10px"></div>
-<div style="position:relative;margin-top:54px">
-<div style="position:relative;display:inline-block;font-family:'Delicious Handrawn',cursive;font-size:34px;line-height:1.05;color:#55409e"><span style="position:absolute;left:-4px;right:-6px;bottom:2px;height:12px;background:#f9d1dc;transform:rotate(-1deg);border-radius:255px 15px 225px 15px/15px 225px 15px 255px"></span><span style="position:relative">como funcionam os formatos</span></div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:23px;line-height:1.1;color:#3f6fc4;margin-top:6px">Toque numa pasta para ver como é e o que inclui cada formato</div>
-</div>
-<div id="folders" style="display:flex;flex-direction:column;gap:26px;padding-top:6px"></div>
-
-
-<div style="position:relative;margin-top:44px">
-<div style="position:relative;display:inline-block;font-family:'Delicious Handrawn',cursive;font-size:38px;line-height:1.05;color:#55409e"><span style="position:absolute;left:-4px;right:-6px;bottom:2px;height:14px;background:#f9d1dc;transform:rotate(-1deg);border-radius:255px 15px 225px 15px/15px 225px 15px 255px"></span><span style="position:relative">adicionais</span></div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:23px;line-height:1.1;color:#3f6fc4;margin-top:6px">extras para deixar o seu convite ainda mais seu</div>
-<div style="display:flex;flex-direction:column;gap:22px;margin-top:20px">
-<div style="position:relative;background:#fffdf8;border:2px solid #55409e;border-radius:8px 14px 8px 12px;padding:16px 16px 14px;box-shadow:4px 5px 0 rgba(85,64,158,.16);transform:rotate(-1.2deg)">
-<div style="display:flex;align-items:center;gap:12px">
-<div style="flex:none;width:64px;height:64px;display:flex;align-items:center;justify-content:center;background:#cfe0fb;border-radius:50%;border:2px solid #55409e"><svg viewBox="0 0 56 56" width="44" height="44" fill="none" stroke="#55409e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="14" width="40" height="12" rx="6"/><rect x="8" y="32" width="40" height="12" rx="6"/><path d="M20 20h16M20 38h16"/></svg></div>
-<div style="min-width:0"><div style="font-family:'Delicious Handrawn',cursive;font-size:25px;line-height:1.05;color:#55409e">Botões extras</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:22px;line-height:1.1;color:#d65a80">+ R$ 15,00 <span style="color:#3f6fc4;font-size:19px">· até 3 botões</span></div></div>
-</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:20px;line-height:1.15;color:#3f6fc4;margin-top:10px">Quer botões onde o modelo não tem? Adicionamos botões extras de confirmação, localização, presentes e o que mais você precisar.</div>
-<a href="https://wa.me/5585996354515?text=Oi%21%20Vi%20o%20portf%C3%B3lio%20da%20Creativy%20e%20quero%20adicionar%20%22Bot%C3%B5es%20extras%22%20%28%2B%20R%24%2015%2C00%29%20no%20meu%20convite." style="display:inline-block;margin-top:10px;font-family:'Delicious Handrawn',cursive;font-size:22px;color:#55409e;background:#ffe9a6;border:2px solid #55409e;border-radius:999px;padding:2px 18px;text-decoration:none">quero adicionar</a>
-</div>
-<div style="position:relative;background:#fffdf8;border:2px solid #55409e;border-radius:8px 14px 8px 12px;padding:16px 16px 14px;box-shadow:4px 5px 0 rgba(85,64,158,.16);transform:rotate(1.4deg)">
-<div style="display:flex;align-items:center;gap:12px">
-<div style="flex:none;width:64px;height:64px;display:flex;align-items:center;justify-content:center;background:#f9d1dc;border-radius:50%;border:2px solid #55409e"><svg viewBox="0 0 56 56" width="44" height="44" fill="none" stroke="#55409e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="28" cy="26" r="14"/><circle cx="22" cy="24" r="1.5" fill="#55409e"/><circle cx="34" cy="24" r="1.5" fill="#55409e"/><path d="M22 31c3 3 9 3 12 0M16 14l-3-8 8 4M40 14l3-8-8 4"/></svg></div>
-<div style="min-width:0"><div style="font-family:'Delicious Handrawn',cursive;font-size:25px;line-height:1.05;color:#55409e">Mascote do aniversariante</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:22px;line-height:1.1;color:#d65a80">+ R$ 40,00 <span style="color:#3f6fc4;font-size:19px">· personagem exclusivo</span></div></div>
-</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:20px;line-height:1.15;color:#3f6fc4;margin-top:10px">O aniversariante vira um mascote desenhado no tema da festa e aparece no convite.</div>
-<a href="https://wa.me/5585996354515?text=Oi%21%20Vi%20o%20portf%C3%B3lio%20da%20Creativy%20e%20quero%20adicionar%20%22Mascote%20do%20aniversariante%22%20%28%2B%20R%24%2040%2C00%29%20no%20meu%20convite." style="display:inline-block;margin-top:10px;font-family:'Delicious Handrawn',cursive;font-size:22px;color:#55409e;background:#ffe9a6;border:2px solid #55409e;border-radius:999px;padding:2px 18px;text-decoration:none">quero adicionar</a>
-</div>
-<div style="position:relative;background:#fffdf8;border:2px solid #55409e;border-radius:8px 14px 8px 12px;padding:16px 16px 14px;box-shadow:4px 5px 0 rgba(85,64,158,.16);transform:rotate(-0.8deg)">
-<div style="display:flex;align-items:center;gap:12px">
-<div style="flex:none;width:64px;height:64px;display:flex;align-items:center;justify-content:center;background:#fff0bf;border-radius:50%;border:2px solid #55409e"><svg viewBox="0 0 56 56" width="44" height="44" fill="none" stroke="#55409e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="12" width="44" height="32" rx="5"/><path d="M23 20l13 8-13 8z" fill="#55409e"/></svg></div>
-<div style="min-width:0"><div style="font-family:'Delicious Handrawn',cursive;font-size:25px;line-height:1.05;color:#55409e">Vídeo do mascote falando</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:22px;line-height:1.1;color:#d65a80">+ R$ 45,00 <span style="color:#3f6fc4;font-size:19px">· mascote em vídeo</span></div></div>
-</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:20px;line-height:1.15;color:#3f6fc4;margin-top:10px">Vídeo do mascotinho/ilustração em 3D da criança falando, até 3 cenas de 10 segundos.</div>
-<a href="https://wa.me/5585996354515?text=Oi%21%20Vi%20o%20portf%C3%B3lio%20da%20Creativy%20e%20quero%20adicionar%20%22V%C3%ADdeo%20do%20mascote%20falando%22%20%28%2B%20R%24%2045%2C00%29%20no%20meu%20convite." style="display:inline-block;margin-top:10px;font-family:'Delicious Handrawn',cursive;font-size:22px;color:#55409e;background:#ffe9a6;border:2px solid #55409e;border-radius:999px;padding:2px 18px;text-decoration:none">quero adicionar</a>
-</div>
-</div>
-<div style="position:relative;background:#fffdf8;border:2px solid #55409e;border-radius:8px 14px 8px 12px;padding:16px 16px 14px;box-shadow:4px 5px 0 rgba(85,64,158,.16);transform:rotate(1deg)">
-<div style="display:flex;align-items:center;gap:12px">
-<div style="flex:none;width:64px;height:64px;display:flex;align-items:center;justify-content:center;background:#cfe0fb;border-radius:50%;border:2px solid #55409e"><svg viewBox="0 0 56 56" width="44" height="44" fill="none" stroke="#55409e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 38V13l22-5v25"/><circle cx="14" cy="39" r="6" fill="#55409e"/><circle cx="36" cy="34" r="6" fill="#55409e"/></svg></div>
-<div style="min-width:0"><div style="font-family:'Delicious Handrawn',cursive;font-size:25px;line-height:1.05;color:#55409e">Música personalizada</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:22px;line-height:1.1;color:#d65a80">+ R$ 35,00 <span style="color:#3f6fc4;font-size:19px">· a sua música no convite</span></div></div>
-</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:20px;line-height:1.15;color:#3f6fc4;margin-top:10px">Criamos uma música personalizada especialmente para o seu convite.</div>
-<a href="https://wa.me/5585996354515?text=Oi%21%20Vi%20o%20portf%C3%B3lio%20da%20Creativy%20e%20quero%20adicionar%20%22M%C3%BAsica%20personalizada%22%20%28%2B%20R%24%2035%2C00%29%20no%20meu%20convite." style="display:inline-block;margin-top:10px;font-family:'Delicious Handrawn',cursive;font-size:22px;color:#55409e;background:#ffe9a6;border:2px solid #55409e;border-radius:999px;padding:2px 18px;text-decoration:none">quero adicionar</a>
-</div>
-</div>
-
-<div id="contato" style="margin-top:26px;position:relative;background:#fffdf8;border:2px solid #55409e;border-radius:8px 14px 8px 12px;padding:34px 22px 26px;box-shadow:5px 6px 0 rgba(85,64,158,.16);transform:rotate(-.8deg);display:flex;flex-direction:column;align-items:flex-start;gap:14px">
-<div style="position:absolute;left:34px;top:-13px;width:84px;height:26px;background:rgba(190,215,250,.9);transform:rotate(-5deg)"></div>
-<div style="font-family:'Delicious Handrawn',cursive;font-size:36px;line-height:1.05;color:#55409e">quer um convite assim?</div>
-<div style="font-size:20px;line-height:1.3;color:#55409e">me conta o tema e eu transformo em um convite que o seu convidado vai querer mostrar pra todo mundo.</div>
-<div style="font-size:20px;line-height:1.3;color:#55409e"><b>Não encontrou o que procurava?</b> Fala comigo que a gente personaliza o seu convite do jeito que você quiser.</div>
-<a href="https://wa.me/5585996354515?text=Oi!%20Vi%20o%20portf%C3%B3lio%20da%20Creativy%20e%20quero%20fazer%20o%20meu%20convite!" style="display:flex;align-items:center;text-decoration:none;height:56px;padding:0 26px;border:3px solid #55409e;border-radius:15px 225px 15px 255px/255px 15px 225px 15px;background:#f9b8c9;box-shadow:4px 5px 0 #55409e;font-family:'Delicious Handrawn',cursive;font-size:26px;color:#3d2c85">pedir o meu convite</a>
-<div style="display:flex;flex-direction:column;gap:2px;font-family:'Caveat',cursive;font-weight:700;font-size:24px;line-height:1.1;color:#3f6fc4"><a href="https://www.instagram.com/creativyconvites/" style="text-decoration:none">@creativyconvites</a><span>WhatsApp (85) 99635-4515</span></div>
-</div>
-<img src="xadrez.png" alt="" style="position:absolute;pointer-events:none;user-select:none;left:0;bottom:0;width:120px">
-<img src="fita.png" alt="" style="position:absolute;pointer-events:none;user-select:none;right:0;bottom:0;width:160px">
-<img src="estrela2.png" alt="" style="position:absolute;pointer-events:none;user-select:none;left:140px;bottom:96px;width:24px">
-<img src="coracao1.png" alt="" style="position:absolute;pointer-events:none;user-select:none;left:60px;bottom:128px;width:20px">
-<div style="position:absolute;left:0;right:0;bottom:26px;padding:0 24px;box-sizing:border-box;text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px"><div style="max-width:280px;font-family:'Delicious Handrawn',cursive;font-size:27px;line-height:1.05;color:#d65a80">Mais que um convite. Uma experiência.</div><div style="font-family:'Caveat',cursive;font-weight:700;font-size:20px;color:#55409e">Creativy · convites digitais</div></div>
-</div>
-</div>
-</div>
-<div id="overlays"></div>
-<script>
-
-const defs = [
-{ id: 'pronto', group: 'Estáticos', color: '#cfe0fb', name: 'Tradicional Pronto', price: 'R$ 15,00',
-desc: 'Modelo já pronto. Alteramos apenas nome, data e local. A arte e a estrutura do convite permanecem iguais.',
-i1: 'arte e estrutura do modelo', i2: 'troca de nome, data e local', i3: 'convite digital estático',
-models: [{ src: 'modelo-chapeuzinho-luiza.jpg', name: 'Chapeuzinho Vermelho · Luiza' }, { src: 'modelo-pokemon-henrique.jpg', name: 'Pokémon · Henrique' }] },
-{ id: 'trad', group: '', color: '#f9d1dc', name: 'Tradicional', price: 'R$ 25,00',
-desc: 'Convite digital estático personalizado de acordo com o tema e as informações do evento.',
-i1: 'convite digital estático', i2: 'feito no tema da sua festa', i3: 'informações do seu evento',
-models: [{ src: 'modelo-hello-kitty-melissa.jpg', name: 'Hello Kitty · Melissa' }, { src: 'modelo-fundo-do-mar-isis.jpg', name: 'Fundo do Mar · Ísis' }, { src: 'modelo-hot-wheels-matteo.jpg', name: 'Hot Wheels · Matteo' }, { src: 'modelo-chapeuzinho-luiza.jpg', name: 'Chapeuzinho Vermelho · Luiza' }, { src: 'modelo-pokemon-henrique.jpg', name: 'Pokémon · Henrique' }] },
-{ id: 'intpronto', group: 'Interativos', color: '#e1d6fa', name: 'Interativo Pronto', price: 'R$ 30,00',
-desc: 'Modelo interativo já pronto. Alteramos as informações do evento, mantendo a estrutura original. Possui botões clicáveis.',
-i1: 'estrutura do modelo', i2: 'troca das informações do evento', i3: 'botões clicáveis' },
-{ id: 'intpers', group: '', color: '#cdeede', name: 'Interativo Personalizado', price: 'R$ 49,90',
-desc: 'Convite interativo criado de acordo com o tema do cliente, com botões clicáveis e informações personalizadas.',
-i1: 'criado no seu tema', i2: 'botões clicáveis', i3: 'informações personalizadas' },
-{ id: 'duo', group: '', color: '#fff0bf', name: 'Interativo Duo', price: 'R$ 90,00',
-desc: 'Capa de abertura + página principal com as informações do evento e botões interativos.',
-i1: 'capa de abertura', i2: 'página principal com as informações', i3: 'botões interativos', i4: 'música incluída' },
-{ id: 'plus', group: '', color: '#fbdcc6', name: 'Interativo Plus', price: 'R$ 140,00',
-desc: 'Capa de abertura + animação ou vídeo de abertura + página principal + botões interativos.',
-i1: 'capa de abertura', i2: 'animação ou vídeo de abertura', i3: 'página principal e botões', i4: 'música incluída',
-models: [{ src: 'capa-daniella.jpg', live: 'https://tamycreativy.github.io/ConviteDaniella/', name: 'Harry Potter · Daniella' }] },
-{ id: 'animp', group: 'Vídeo e animação', color: '#cdeede', name: 'Animadinho Pronto', price: 'R$ 29,90',
-desc: 'Modelo animado já pronto, com vídeo do tema integrado na página de informações. Alteramos apenas nome, data e local, mantendo a arte e a animação. Entregue em vídeo (MP4). Se quiser botões clicáveis, é só adicionar por + R$ 15,00 e o convite passa a ser entregue em link.',
-i1: 'vídeo do tema integrado na página', i2: 'troca de nome, data e local', i3: 'entrega em vídeo (MP4)', i4: 'música incluída' },
-{ id: 'animpers', group: '', color: '#fff0bf', name: 'Animadinho Personalizado', price: 'R$ 59,90',
-desc: 'Convite criado de acordo com o tema da festa, com vídeo do tema integrado na página de informações. Entregue em vídeo (MP4). Se quiser botões clicáveis, é só adicionar por + R$ 15,00 e o convite passa a ser entregue em link.',
-i1: 'vídeo do tema integrado na página', i2: 'criado no tema da sua festa', i3: 'botões opcionais (+ R$ 15,00)', i4: 'música incluída' },
-{ id: 'video', group: '', color: '#cfe0fb', name: 'Vídeo', price: 'R$ 119,00',
-desc: 'Convite produzido 100% em vídeo, com até 1 minuto de duração, animações, transições e elementos personalizados, mais música incluída.',
-i1: '100% em vídeo, até 1 minuto', i2: 'animações, transições e elementos personalizados', i3: 'música incluída' },
-{ id: 'animado', group: '', color: '#f9d1dc', name: 'Animado', price: 'R$ 159,90',
-desc: 'Capa de abertura + até 3 cenas animadas + página de informações com botões clicáveis.',
-i1: 'capa de abertura', i2: 'até 3 cenas animadas', i3: 'página de informações com botões', i4: 'música incluída',
-models: [{ src: 'capa-veruska.jpg', live: 'https://tamycreativy.github.io/Veruska50/', name: 'Noite através do tempo · Veruska, 50 anos' }] },
-{ id: 'extenso', group: 'Scrapbook, livrinho e extenso', color: '#cdeede', name: 'Extenso', price: 'R$ 110,00',
-desc: 'Convite em formato extenso: capa de abertura e uma página longa, em que cada seção traz uma informação, como data, local, dress code, dicas de presente, contagem regressiva e confirmação de presença, cada uma no seu próprio papel.',
-i1: 'capa animada que abre ao toque', i2: 'uma seção para cada informação', i3: 'contagem regressiva e confirmação de presença', i4: 'música incluída',
-models: [{ src: 'modelo-extenso-isabella.webp', name: 'Tiana · Isabella 15 anos' }] },
-{ id: 'scrap', group: '', color: '#e1d6fa', name: 'Scrapbook', price: 'R$ 120,00',
-desc: 'Convite inspirado em scrapbook, com colagens, elementos decorativos e composição artística personalizada. Possui capa + página principal.',
-i1: 'colagens e elementos decorativos', i2: 'composição artística personalizada', i3: 'capa + página principal', i4: 'música incluída' },
-{ id: 'scroll', group: '', color: '#cdeede', name: 'Scrapbook Scroll', price: 'R$ 169,00',
-desc: 'Convite em formato de scroll vertical, com capa e uma composição contínua de scrapbook para o convidado explorar ao rolar a página.',
-i1: 'scroll vertical', i2: 'capa + composição contínua', i3: 'explora ao rolar a página', i4: 'música incluída' },
-{ id: 'livrinho', group: '', color: '#fff0bf', name: 'Livrinho', price: 'R$ 180,00',
-desc: 'Convite em formato de livrinho digital, com capa e páginas ilustradas seguindo a identidade visual e o tema da festa.',
-i1: 'formato de livrinho digital', i2: 'capa e páginas ilustradas', i3: 'identidade visual do tema da festa', i4: 'música incluída' },
-{ id: 'supreme', group: 'Sob medida', color: '#fbdcc6', name: 'Supreme', price: 'a partir de R$ 220,00',
-desc: 'Nossa experiência mais completa. HTML totalmente personalizado, podendo incluir múltiplas telas, animações, vídeos, jogos, escolhas, efeitos, histórias e outras interações. O valor varia de acordo com a complexidade e os recursos escolhidos.',
-i1: 'HTML totalmente personalizado', i2: 'telas, animações, vídeos, jogos e escolhas', i3: 'valor varia pela complexidade', i4: 'música incluída',
-models: [{ src: 'capa-diogo.jpg', live: 'https://tamycreativy.github.io/Diogo4anos/', name: 'Scooby-Doo · Diogo, 4 anos' }, { src: 'capa-kaleb.jpg', live: 'https://tamycreativy.github.io/Kaleb4anos/', name: 'Os Incríveis · Kaleb, 4 anos' }, { src: 'capa-halloween.jpg', live: 'https://tamycreativy.github.io/Convite-Hallowen/', name: 'Halloween · escape game' }] }
-];
-const zooms = [
-{ src: 'grande-jardim.jpg', alt: 'Convite Jardim Encantado' },
-{ src: 'grande-rapunzel.jpg', alt: 'Convite Rapunzel' },
-{ src: 'grande-scooby.jpg', alt: 'Convite Scooby-Doo' },
-{ src: 'grande-moranguinho.jpg', alt: 'Convite Moranguinho' },
-{ src: 'grande-harry.jpg', alt: 'Convite Harry Potter' }
-];
-const S={cat:null,open:null,zoom:null,idx:{},view:null};
-let tx=null,sw=false;
-const $=id=>document.getElementById(id);
-
-const CATS=[
-{id:'infantil',color:'#cfe0fb',title:'Infantil',sub:'aniversários e festinhas',rot:-.6,keys:['Chapeuzinho','Pokémon','Hello Kitty','Fundo do Mar','Hot Wheels','Scooby','Incríveis']},
-{id:'debut',color:'#f9d1dc',title:'Debutantes',sub:'15 anos',rot:.5,keys:['15 anos']},
-{id:'adulto',color:'#e1d6fa',title:'Adulto',sub:'aniversários e festas',rot:-.4,keys:['Veruska','Halloween','Daniella']}
-];
-function catModels(c){const out=[];defs.forEach(d=>(d.models||[]).forEach((m,i)=>{
-  const isDeb=/Isabella 15 anos/.test(m.name);
-  const hit=c.id==='debut'?isDeb:(!isDeb&&c.keys.some(k=>m.name.indexOf(k)>-1));
-  if(hit)out.push({d:d,i:i,m:m});}));return out}
-function renderCats(){
-  const keep={};document.querySelectorAll('.cscroll').forEach(e=>keep[e.id]=e.scrollLeft);
-  $('cats').innerHTML=CATS.map(c=>{
-    const ms=catModels(c);if(!ms.length)return '';
-    const open=S.cat===c.id;
-    const th=ms.slice(0,2).map((x,k)=>`<img src="${x.m.src}" alt="" style="width:52px;height:68px;object-fit:cover;border-radius:6px;border:2px solid #55409e;background:#fffdf8;transform:rotate(${k?3:-4}deg);margin-left:-8px">`).join('');
-    const tiles=ms.map(x=>`<div class="cc" style="flex:none;width:228px;scroll-snap-align:center;box-sizing:border-box;background:#fffdf8;border:2px solid #55409e;border-radius:8px 14px 8px 12px;padding:10px;box-shadow:4px 5px 0 rgba(85,64,158,.16);transition:transform .25s,opacity .25s">
-<div role="button" tabindex="0" onclick="A.openModel('${x.d.id}',${x.i})" style="cursor:pointer"><img src="${x.m.src}" alt="${x.m.name}" style="display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px"></div>
-<div style="font-family:'Delicious Handrawn',cursive;font-size:23px;line-height:1.1;color:#55409e;margin-top:8px">${x.m.name}</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:20px;line-height:1.1;color:#3f6fc4;margin-top:2px">formato: <span style="color:#d65a80">${x.d.name}</span></div>
-<button type="button" onclick="A.goFormat('${x.d.id}')" style="cursor:pointer;width:100%;margin-top:10px;font-family:'Delicious Handrawn',cursive;font-size:22px;color:#55409e;background:#ffe9a6;border:2px solid #55409e;border-radius:15px 225px 15px 255px/255px 15px 225px 15px;padding:6px 0;box-shadow:3px 4px 0 #55409e">detalhes</button></div>`).join('');
-    return `<div style="position:relative">
-<div style="position:absolute;left:18px;top:-15px;width:96px;height:18px;box-sizing:border-box;background:${c.color};border:2.5px solid #55409e;border-bottom:none;border-radius:10px 10px 0 0"></div>
-<div style="background:${c.color};border:2.5px solid #55409e;border-radius:4px 14px 10px 12px;box-shadow:4px 5px 0 rgba(85,64,158,.16);overflow:hidden">
-<button type="button" onclick="A.cat('${c.id}')" aria-expanded="${open}" style="display:flex;align-items:center;gap:12px;width:100%;box-sizing:border-box;padding:16px;background:transparent;border:none;text-align:left;color:#55409e">
-<span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span style="font-family:'Delicious Handrawn',cursive;font-size:28px;line-height:1.05">${c.title}</span><span style="font-family:'Caveat',cursive;font-weight:700;font-size:21px;line-height:1.05;color:#3d2c85">${c.sub}</span></span>
-<span style="display:flex;padding-left:8px">${th}</span>
-<span style="font-family:'Caveat',cursive;font-weight:700;font-size:22px;color:#3d2c85;flex-shrink:0">${open?'fechar':'abrir'}</span></button>
-${open?`<div style="position:relative;padding:0 0 18px"><div class="cscroll" id="cs-${c.id}" onscroll="A.sc(this)" style="display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:8px calc(50% - 114px) 14px;scrollbar-width:none">${tiles}</div>
-<div style="display:flex;justify-content:center;align-items:center;gap:14px"><button type="button" aria-label="Anterior" onclick="A.carr('${c.id}',-1)" style="cursor:pointer;font-family:'Delicious Handrawn',cursive;font-size:28px;line-height:1;color:#55409e;background:#ffe9a6;border:2px solid #55409e;border-radius:50%;width:42px;height:42px;padding:0">‹</button><span style="font-family:'Caveat',cursive;font-weight:700;font-size:19px;color:#3d2c85">deslize para ver mais</span><button type="button" aria-label="Próximo" onclick="A.carr('${c.id}',1)" style="cursor:pointer;font-family:'Delicious Handrawn',cursive;font-size:28px;line-height:1;color:#55409e;background:#ffe9a6;border:2px solid #55409e;border-radius:50%;width:42px;height:42px;padding:0">›</button></div></div>`:''}
-</div></div>`}).join('');
-  document.querySelectorAll('.cscroll').forEach(e=>{if(keep[e.id]!=null)e.scrollLeft=keep[e.id];A.sc(e)});
-}
-function render(){
-  renderCats();
-  const idx=S.idx;
-  const zi=S.zoom;
-  const zoomOpen=zi!==null,zoomSrc=zoomOpen?zooms[zi].src:'',zoomAlt=zoomOpen?zooms[zi].alt:'';
-  const vd=defs.find(x=>x.id===S.view);
-  const vn=vd?vd.models.length:0, vc=vd?(idx[vd.id]||0)%vn:0, vm=vd?vd.models[vc]:null;
-  const viewOpen=!!vd,viewSrc=vm?vm.src:'',viewName=vm?vm.name:'',viewLive=vm&&vm.live?vm.live:'',viewImg=vm&&!vm.live,viewMulti=vn>1,viewCounter=(vc+1)+' / '+vn;
-  $('folders').innerHTML=defs.map(d=>{
-    const ms=d.models||[],cur=ms.length?ms[(idx[d.id]||0)%ms.length]:null;
-    const f=Object.assign({},d,{hasGroup:d.group!=='',isOpen:S.open===d.id,label:S.open===d.id?'fechar':'abrir',
-      wa:'https://wa.me/5585996354515?text='+encodeURIComponent('Oi! Vi o portfólio da Creativy e gostei do convite Creativy '+d.name+' ('+d.price+'). Quero fazer o meu!'),
-      hasModels:ms.length>0,multi:ms.length>1,curSrc:cur?cur.src:'',curName:cur?cur.name:'',curLive:cur&&cur.live?cur.live:'',
-      counter:((idx[d.id]||0)%Math.max(ms.length,1)+1)+' / '+ms.length,noMedia:ms.length===0});
-    for(let j=1;j<=13;j++)f['k'+j]=ms.length?false:false;
-    const ids={pronto:1,trad:2,intpronto:3,intpers:4,duo:5,plus:6,video:7,animado:8,scrap:9,scroll:10,livrinho:11,supreme:12,animp:13,animpers:13};
-    if(!ms.length&&ids[d.id])f['k'+ids[d.id]]=true;
-    return `
-<div id="fmt-${f.id}" style="display:flex;flex-direction:column;gap:22px;scroll-margin-top:20px">
-${(f.hasGroup)?`
-<div style="display:flex;align-items:center;gap:10px;margin-top:8px;font-family:'Caveat',cursive;font-weight:700;font-size:28px;line-height:1;color:#3f6fc4"><span>${f.group}</span><span style="flex:1;min-width:0;border-top:2px dashed #a99be0"></span><img src="estrela3.png" alt="" style="width:22px;height:auto;flex-shrink:0"></div>
-`:''}
-<div style="position:relative">
-<div style="position:absolute;left:18px;top:-15px;width:96px;height:18px;box-sizing:border-box;background:${f.color};border:2.5px solid #55409e;border-bottom:none;border-radius:10px 10px 0 0"></div>
-<div style="background:${f.color};border:2.5px solid #55409e;border-radius:4px 14px 10px 12px;box-shadow:4px 5px 0 rgba(85,64,158,.16);overflow:hidden">
-<button type="button" onclick="A.toggle('${f.id}')" aria-expanded="${f.isOpen}" style="display:flex;align-items:center;gap:12px;width:100%;box-sizing:border-box;padding:16px 16px;background:transparent;border:none;text-align:left;color:#55409e">
-<svg viewBox="0 0 36 30" width="36" height="30" fill="none" stroke="#55409e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0"><path d="M3 6 H13 L16 10 H33 V26 H3 Z" fill="#fffdf8"/></svg>
-<span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span style="font-family:'Delicious Handrawn',cursive;font-size:26px;line-height:1.05">${f.name}</span><span style="font-family:'Caveat',cursive;font-weight:700;font-size:21px;line-height:1.05;color:#3d2c85">${f.price}</span></span>
-<span style="font-family:'Caveat',cursive;font-weight:700;font-size:22px;color:#3d2c85;flex-shrink:0">${f.label}</span>
-</button>
-${(f.isOpen)?`
-<div style="padding:0 14px 16px">
-<div style="position:relative;background:#fffdf8;border:2px solid #55409e;border-radius:6px 12px 8px 10px;padding:22px 16px 18px;display:flex;flex-direction:column;gap:14px;transform:rotate(-.4deg)">
-<div style="position:absolute;right:30px;top:-12px;width:64px;height:22px;background:rgba(255,225,130,.85);transform:rotate(4deg)"></div>
-<div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap"><span style="font-family:'Caveat',cursive;font-weight:700;font-size:22px;line-height:1;color:#3f6fc4">valor</span><span style="font-family:'Delicious Handrawn',cursive;font-size:34px;line-height:1;color:#d65a80">${f.price}</span></div>
-<div style="font-size:19px;line-height:1.3">${f.desc}</div>
-<div style="display:flex;gap:14px;align-items:flex-start">
-<div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:6px;width:138px">
-<div style="position:relative;width:138px;height:262px;box-sizing:border-box;border:3px solid #55409e;border-radius:24px;background:#fbf1e4;display:flex;align-items:center;justify-content:center;box-shadow:3px 4px 0 rgba(85,64,158,.18)">
-<div style="position:absolute;top:7px;left:50%;margin-left:-14px;width:28px;height:5px;border-radius:3px;background:#55409e"></div>
-
-${(f.k1)?`<svg viewBox="0 0 110 230" width="110" height="230" fill="none" stroke="#55409e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Modelo de convite estático pronto"><rect x="14" y="40" width="82" height="130" rx="6" fill="#cfe0fb"/><circle cx="55" cy="72" r="13" fill="#fffdf8"/><path d="M28 108 H82 M32 121 H78 M38 134 H72" stroke-width="2"/><path d="M62 190 L70 198 L88 178" stroke="#f28aa5" stroke-width="3.5"/></svg>`:''}
-${(f.k2)?`<svg viewBox="0 0 110 230" width="110" height="230" fill="none" stroke="#55409e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Modelo de convite estático personalizado"><rect x="14" y="40" width="82" height="130" rx="6" fill="#f9d1dc"/><path d="M28 70 l8 -12 l8 12 l12 2 l-9 8 l3 12 l-14 -6 l-14 6 l3 -12 l-9 -8 Z" fill="#fffdf8" stroke-width="2"/><path d="M28 118 H82 M32 131 H70" stroke-width="2"/><path d="M62 188 L90 160 L98 168 L70 196 L60 200 Z" fill="#ffe9a6"/><path d="M90 160 L98 168" stroke-width="4"/></svg>`:''}
-${(f.k3)?`<svg viewBox="0 0 110 230" width="110" height="230" fill="none" stroke="#55409e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Modelo de convite interativo pronto"><rect x="14" y="30" width="82" height="100" rx="6" fill="#cfe0fb"/><path d="M26 56 H84 M26 70 H72 M26 84 H78" stroke-width="2"/><rect x="22" y="148" width="66" height="22" rx="11" fill="#f9b8c9"/><rect x="22" y="180" width="66" height="22" rx="11" fill="#fffdf8"/><circle cx="76" cy="176" r="9" fill="#ffe9a6"/><circle cx="76" cy="176" r="16" stroke-dasharray="3 5"/></svg>`:''}
-${(f.k4)?`<svg viewBox="0 0 110 230" width="110" height="230" fill="none" stroke="#55409e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Modelo de convite interativo personalizado"><rect x="14" y="30" width="82" height="100" rx="6" fill="#e1d6fa"/><path d="M55 44 l5 12 l12 5 l-12 5 l-5 12 l-5 -12 l-12 -5 l12 -5 Z" fill="#ffe9a6" stroke-width="2"/><path d="M26 108 H84 M26 118 H66" stroke-width="2"/><rect x="22" y="148" width="66" height="22" rx="11" fill="#f9b8c9"/><rect x="22" y="180" width="66" height="22" rx="11" fill="#fffdf8"/><path d="M96 24 v10 M91 29 h10 M18 140 v8 M14 144 h8" stroke="#e0a400"/></svg>`:''}
-${(f.k5)?`<svg viewBox="0 0 110 230" width="110" height="230" fill="none" stroke="#55409e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Modelo de capa mais página principal"><rect x="22" y="18" width="66" height="80" rx="6" fill="#fff0bf"/><path d="M34 44 L55 62 L76 44 M34 44 V76 H76 V44" stroke-width="2"/><path d="M55 104 V120 M48 113 L55 122 L62 113"/><rect x="22" y="128" width="66" height="84" rx="6" fill="#cfe0fb"/><path d="M32 146 H78 M32 158 H68" stroke-width="2"/><rect x="30" y="176" width="50" height="16" rx="8" fill="#f9b8c9"/></svg>`:''}
-${(f.k6)?`<svg viewBox="0 0 110 230" width="110" height="230" fill="none" stroke="#55409e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Modelo de capa, vídeo de abertura e página principal"><rect x="22" y="14" width="66" height="52" rx="6" fill="#fff0bf"/><path d="M34 34 L55 48 L76 34 M34 34 V54 H76 V34" stroke-width="2"/><path d="M55 70 V80 M49 75 L55 82 L61 75"/><rect x="22" y="86" width="66" height="52" rx="6" fill="#e1d6fa"/><path d="M48 98 L48 126 L70 112 Z" fill="#55409e"/><path d="M55 142 V152 M49 147 L55 154 L61 147"/><rect x="22" y="158" width="66" height="58" rx="6" fill="#cfe0fb"/><path d="M32 174 H78 M32 184 H66" stroke-width="2"/><rect x="30" y="194" width="50" height="14" rx="7" fill="#f9b8c9"/></svg>`:''}
-${(f.k7)?`<svg viewBox="0 0 110 230" width="110" height="230" fill="none" stroke="#55409e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Modelo de convite em vídeo"><rect x="20" y="26" width="70" height="130" rx="8" fill="#e1d6fa"/><path d="M46 76 L46 106 L68 91 Z" fill="#55409e"/><path d="M28 140 H82" stroke-width="2"/><circle cx="52" cy="140" r="4" fill="#f9b8c9"/><ellipse cx="38" cy="192" rx="7" ry="5" fill="#55409e"/><path d="M44 191 V168 q10 2 12 12"/><path d="M82 176 v10 M77 181 h10 M92 196 v8 M88 200 h8" stroke="#e0a400"/></svg>`:''}
-${(f.k8)?`<svg viewBox="0 0 110 230" width="110" height="230" fill="none" stroke="#55409e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Modelo de convite animado"><rect x="14" y="24" width="82" height="184" rx="6" fill="#cfe0fb"/><rect x="24" y="38" width="62" height="48" rx="6" fill="#e1d6fa"/><path d="M48 50 L48 74 L68 62 Z" fill="#55409e"/><path d="M26 104 H84 M26 116 H72 M26 128 H78" stroke-width="2"/><rect x="24" y="148" width="62" height="20" rx="10" fill="#f9b8c9"/><rect x="24" y="176" width="62" height="20" rx="10" fill="#fffdf8"/><path d="M92 20 v10 M87 25 h10" stroke="#e0a400"/></svg>`:''}
-${(f.k9)?`<svg viewBox="0 0 110 230" width="110" height="230" fill="none" stroke="#55409e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Modelo de convite scrapbook"><rect x="18" y="30" width="62" height="86" rx="3" transform="rotate(-6 49 73)" fill="#f9d1dc"/><rect x="34" y="84" width="62" height="86" rx="3" transform="rotate(5 65 127)" fill="#cfe0fb"/><rect x="30" y="22" width="34" height="14" transform="rotate(-8 47 29)" fill="#ffe9a6" stroke-width="1.5"/><path d="M44 76 C34 66 38 56 46 58 C50 59 50 64 50 64 C50 64 52 58 58 59 C66 61 62 70 44 76 Z" fill="#f28aa5" stroke-width="2"/><path d="M50 120 H86 M50 132 H78 M50 144 H82" stroke-width="2"/><path d="M26 190 l5 12 l12 5 l-12 5 l-5 12 l-5 -12 l-12 -5 l12 -5 Z" fill="#ffe9a6" stroke-width="2" transform="translate(12 -8)"/><path d="M80 196 C84 186 94 190 90 200" stroke-width="2"/></svg>`:''}
-${(f.k10)?`<svg viewBox="0 0 110 230" width="110" height="230" fill="none" stroke="#55409e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Modelo de scrapbook em scroll vertical"><rect x="18" y="22" width="74" height="46" rx="4" transform="rotate(-4 55 45)" fill="#cfe0fb"/><rect x="18" y="84" width="74" height="46" rx="4" transform="rotate(3 55 107)" fill="#f9d1dc"/><rect x="18" y="146" width="74" height="46" rx="4" transform="rotate(-2 55 169)" fill="#e1d6fa"/><path d="M55 34 v14 M48 41 h14 M40 108 l6 -8 l8 10 l6 -6 l10 12" stroke-width="2"/><path d="M55 202 V222 M47 214 L55 224 L63 214"/></svg>`:''}
-${(f.k11)?`<svg viewBox="0 0 110 230" width="110" height="230" fill="none" stroke="#55409e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Modelo de livrinho digital"><path d="M10 80 L55 92 L55 164 L10 152 Z" fill="#cfe0fb" stroke="none" transform="translate(3 3)"/><path d="M55 92 L100 80 L100 152 L55 164 Z" fill="#f9d1dc" stroke="none" transform="translate(3 3)"/><path d="M10 80 L55 92 L55 164 L10 152 Z"/><path d="M55 92 L100 80 L100 152 L55 164 Z"/><path d="M20 102 L45 108 M20 114 L45 120 M20 126 L38 131" stroke-width="2"/><path d="M76 124 C62 112 66 100 74 102 C78 103 78 108 78 108 C78 108 80 102 86 103 C94 105 90 114 76 124 Z" fill="#f28aa5" stroke-width="2"/><path d="M96 150 L86 152 L93 140"/><path d="M30 190 C46 208 70 208 84 192 M77 185 L85 192 L74 196"/></svg>`:''}
-${(f.k12)?`<svg viewBox="0 0 110 230" width="110" height="230" fill="none" stroke="#55409e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Modelo de convite supreme"><path d="M55 22 l7 18 l18 7 l-18 7 l-7 18 l-7 -18 l-18 -7 l18 -7 Z" fill="#ffe9a6"/><path d="M55 72 V100 M55 100 L28 128 M55 100 L82 128"/><circle cx="55" cy="100" r="6" fill="#f9b8c9"/><rect x="14" y="128" width="28" height="28" rx="5" fill="#cfe0fb"/><rect x="68" y="128" width="28" height="28" rx="5" fill="#e1d6fa"/><text x="28" y="149" text-anchor="middle" font-family="Delicious Handrawn, cursive" font-size="20" fill="#55409e" stroke="none">?</text><path d="M76 136 L76 150 L88 143 Z" fill="#55409e"/><path d="M28 156 V176 M82 156 V176"/><circle cx="28" cy="184" r="8" fill="#f9d1dc"/><circle cx="82" cy="184" r="8" fill="#cdeede"/><path d="M96 70 v10 M91 75 h10 M16 70 v8 M12 74 h8" stroke="#e0a400"/><path d="M40 210 H70" stroke-dasharray="3 6"/></svg>`:''}
-${(f.k13)?`<svg viewBox="0 0 110 230" width="110" height="230" fill="none" stroke="#55409e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-label="Modelo de convite com vídeo integrado na página"><rect x="14" y="24" width="82" height="182" rx="6" fill="#cfe0fb"/><rect x="22" y="32" width="66" height="62" rx="6" fill="#cdeede"/><path d="M28 78 q6 -6 12 0 t12 0 t12 0 t12 0" stroke-width="2"/><ellipse cx="46" cy="56" rx="10" ry="6" fill="#ffe9a6"/><path d="M56 56 l7 -5 v10 Z" fill="#ffe9a6"/><circle cx="43" cy="54" r="1.6" fill="#55409e" stroke="none"/><circle cx="72" cy="46" r="3"/><circle cx="78" cy="58" r="2"/><path d="M26 112 H84 M26 124 H70 M26 136 H78" stroke-width="2"/><path d="M30 160 H80 M38 174 H72" stroke-width="3"/><path d="M92 20 v10 M87 25 h10" stroke="#e0a400"/></svg>`:''}
-${(f.hasModels)?`<div role="button" tabindex="0" aria-label="Ver o modelo maior na tela" onclick="A.openView('${f.id}')" ontouchstart="A.ts(event)" ontouchend="A.te(event,'${f.id}')" style="width:100%;height:100%;cursor:zoom-in"><img src="${f.curSrc}" alt="${f.curName}" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:21px"></div>`:''}
-
-</div>
-${(f.hasModels)?`<div style="display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center">
-${(f.multi)?`<div style="display:flex;align-items:center;gap:10px"><button type="button" aria-label="Modelo anterior" onclick="A.step('${f.id}',-1)" style="cursor:pointer;font-family:'Delicious Handrawn',cursive;font-size:26px;line-height:1;color:#55409e;background:#ffe9a6;border:2px solid #55409e;border-radius:50%;width:34px;height:34px;padding:0">‹</button><span style="font-family:'Caveat',cursive;font-weight:700;font-size:22px;color:#55409e">${f.counter}</span><button type="button" aria-label="Próximo modelo" onclick="A.step('${f.id}',1)" style="cursor:pointer;font-family:'Delicious Handrawn',cursive;font-size:26px;line-height:1;color:#55409e;background:#ffe9a6;border:2px solid #55409e;border-radius:50%;width:34px;height:34px;padding:0">›</button></div>`:''}
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:19px;line-height:1;color:#3f6fc4">${f.curName}</div>
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:16px;line-height:1;color:#d65a80">${f.curLive?'toque para abrir o convite':'toque para ampliar'}</div>
-</div>`:''}
-${(f.noMedia)?`<div style="font-family:'Caveat',cursive;font-weight:700;font-size:18px;line-height:1.05;color:#3f6fc4;text-align:center">[trocar pelo print do convite]</div>`:''}
-</div>
-<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:10px">
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:22px;line-height:1;color:#3f6fc4">inclui</div>
-<div style="font-size:17px;line-height:1.25">~ ${f.i1}</div>
-<div style="font-size:17px;line-height:1.25">~ ${f.i2}</div>
-<div style="font-size:17px;line-height:1.25">~ ${f.i3}</div>
-${f.i4?`<div style="font-size:17px;line-height:1.25">~ ${f.i4}</div>`:''}
-</div>
-</div>
-<a href="${f.wa}" style="box-sizing:border-box;display:flex;align-items:center;justify-content:center;text-decoration:none;height:56px;width:100%;border:3px solid #55409e;border-radius:15px 225px 15px 255px/255px 15px 225px 15px;background:#f9b8c9;box-shadow:4px 5px 0 #55409e;font-family:'Delicious Handrawn',cursive;font-size:26px;color:#3d2c85">Gostei, quero um convite</a>
-</div>
-</div>
-`:''}
-</div>
-</div>
-</div>
-`;
-  }).join('');
-  $('overlays').innerHTML=`${(viewOpen)?`
-<div onclick="A.closeView()" ontouchstart="A.ts(event)" ontouchend="A.vte(event)" style="position:fixed;left:0;top:0;right:0;bottom:0;z-index:60;background:rgba(40,28,80,.88);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;box-sizing:border-box;cursor:zoom-out">
-${(viewLive)?`<iframe src="${viewLive}" title="Convite ao vivo" allow="autoplay; fullscreen" style="display:block;width:min(100%,400px);height:min(74vh,740px);border:3px solid #fffdf8;border-radius:10px;background:#000" onclick="event.stopPropagation()"></iframe>`:''}${(viewImg)?`<img src="${viewSrc}" alt="${viewName}" style="display:block;max-width:100%;max-height:74vh;width:auto;height:auto;border-radius:10px;border:3px solid #fffdf8;box-shadow:6px 8px 0 rgba(0,0,0,.25);background:#fffdf8">`:''}
-<div style="font-family:'Caveat',cursive;font-weight:700;font-size:24px;color:#fffdf8;margin-top:10px;text-align:center">${viewName}</div>${(viewLive)?`<a href="${viewLive}" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="font-family:'Caveat',cursive;font-weight:700;font-size:22px;color:#ffe9a6">abrir em tela cheia ↗</a>`:''}
-<div style="display:flex;align-items:center;gap:14px;margin-top:10px">
-${(viewMulti)?`<button type="button" aria-label="Modelo anterior" onclick="A.vstep(event,-1)" style="cursor:pointer;font-family:'Delicious Handrawn',cursive;font-size:30px;line-height:1;color:#55409e;background:#ffe9a6;border:2px solid #fffdf8;border-radius:50%;width:44px;height:44px;padding:0">‹</button>`:''}
-<button type="button" onclick="A.closeView()" style="cursor:pointer;font-family:'Delicious Handrawn',cursive;font-size:26px;color:#55409e;background:#ffe9a6;border:2px solid #fffdf8;border-radius:999px;padding:4px 26px">fechar</button>
-${(viewMulti)?`<button type="button" aria-label="Próximo modelo" onclick="A.vstep(event,1)" style="cursor:pointer;font-family:'Delicious Handrawn',cursive;font-size:30px;line-height:1;color:#55409e;background:#ffe9a6;border:2px solid #fffdf8;border-radius:50%;width:44px;height:44px;padding:0">›</button>`:''}
-</div>
-${(viewMulti)?`<div style="font-family:'Caveat',cursive;font-weight:700;font-size:20px;color:#fffdf8;margin-top:6px">${viewCounter}${(viewLive)?'':' · arraste para o lado'}</div>`:''}
-</div>
-`:''}
-${(zoomOpen)?`
-<div onclick="A.zoom(null)" style="position:fixed;left:0;top:0;right:0;bottom:0;z-index:50;background:rgba(40,28,80,.82);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;box-sizing:border-box;cursor:zoom-out">
-<img src="${zoomSrc}" alt="${zoomAlt}" style="display:block;max-width:100%;max-height:80vh;width:auto;height:auto;border-radius:10px;border:3px solid #fffdf8;box-shadow:6px 8px 0 rgba(0,0,0,.25);background:#fffdf8">
-<button type="button" onclick="A.zoom(null)" style="margin-top:16px;cursor:pointer;font-family:'Delicious Handrawn',cursive;font-size:26px;color:#55409e;background:#ffe9a6;border:2px solid #fffdf8;border-radius:999px;padding:4px 26px">fechar</button>
-</div>
-`:''}
-</div>
-`;
-  document.body.style.overflow=(zoomOpen||viewOpen)?'hidden':'';
-}
-const A={
-  sc(el){const r=el.getBoundingClientRect(),mid=r.left+r.width/2;el.querySelectorAll('.cc').forEach(c=>{const q=c.getBoundingClientRect(),d=Math.abs(q.left+q.width/2-mid)/(r.width/2);const k=Math.max(0,Math.min(1,d));c.style.transform='scale('+(1-.1*k).toFixed(3)+')';c.style.opacity=(1-.35*k).toFixed(2)})},
-  carr(id,dir){const e=$('cs-'+id);if(e)e.scrollBy({left:dir*244,behavior:'smooth'})},
-  goFormat(did){S.open=did;render();const e=$('fmt-'+did);if(e)e.scrollIntoView({behavior:'smooth',block:'start'})},
-  cat(id){S.cat=S.cat===id?null:id;render();},
-  openModel(did,i){S.idx[did]=i;S.view=did;render();},
-  toggle(id){S.open=S.open===id?null:id;render();},
-  zoom(i){S.zoom=i;render();},
-  openView(id){if(sw){sw=false;return;}S.view=id;render();},
-  closeView(){S.view=null;render();},
-  step(id,dir){const d=defs.find(x=>x.id===id),n=d.models.length;S.idx[id]=((S.idx[id]||0)+dir+n)%n;render();},
-  vstep(e,dir){if(e&&e.stopPropagation)e.stopPropagation();if(S.view)A.step(S.view,dir);},
-  ts(e){const t=e.touches&&e.touches[0];tx=t?t.clientX:null;sw=false;},
-  te(e,id){const t=e.changedTouches&&e.changedTouches[0];if(tx==null||!t)return;const dx=t.clientX-tx;tx=null;if(Math.abs(dx)>40){sw=true;A.step(id,dx<0?1:-1);}},
-  vte(e){const t=e.changedTouches&&e.changedTouches[0];if(tx==null||!t||!S.view)return;const dx=t.clientX-tx;tx=null;if(Math.abs(dx)>40)A.step(S.view,dx<0?1:-1);}
-};
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){S.zoom=null;S.view=null;render();}if(S.view&&e.key==='ArrowRight')A.step(S.view,1);if(S.view&&e.key==='ArrowLeft')A.step(S.view,-1);});
-render();
-
+<div class="sec2"><h2>Adicionais</h2><p>Extras para deixar o seu convite ainda mais seu</p></div>
+<div class="ads"><a class="ad" href="https://wa.me/5585996354515?text=Oi%21%20Vi%20o%20portf%C3%B3lio%20da%20Creativy%20e%20quero%20adicionar%20Bot%C3%B5es%20extras%20%28%2B%20R%24%2015%2C00%29%20no%20meu%20convite."><b>Botões extras</b><em>+ R$ 15,00</em><small>até 3 botões</small><p>Confirmação, localização, presentes e o que mais você precisar.</p><span>quero adicionar →</span></a><a class="ad" href="https://wa.me/5585996354515?text=Oi%21%20Vi%20o%20portf%C3%B3lio%20da%20Creativy%20e%20quero%20adicionar%20Mascote%20do%20aniversariante%20%28%2B%20R%24%2040%2C00%29%20no%20meu%20convite."><b>Mascote do aniversariante</b><em>+ R$ 40,00</em><small>personagem exclusivo</small><p>O aniversariante vira um mascote desenhado no tema da festa.</p><span>quero adicionar →</span></a><a class="ad" href="https://wa.me/5585996354515?text=Oi%21%20Vi%20o%20portf%C3%B3lio%20da%20Creativy%20e%20quero%20adicionar%20V%C3%ADdeo%20do%20mascote%20falando%20%28%2B%20R%24%2045%2C00%29%20no%20meu%20convite."><b>Vídeo do mascote falando</b><em>+ R$ 45,00</em><small>até 3 cenas de 10 s</small><p>O mascotinho em 3D falando, direto no convite.</p><span>quero adicionar →</span></a><a class="ad" href="https://wa.me/5585996354515?text=Oi%21%20Vi%20o%20portf%C3%B3lio%20da%20Creativy%20e%20quero%20adicionar%20M%C3%BAsica%20personalizada%20%28%2B%20R%24%2035%2C00%29%20no%20meu%20convite."><b>Música personalizada</b><em>+ R$ 35,00</em><small>a sua música</small><p>Uma música criada especialmente para o seu convite.</p><span>quero adicionar →</span></a><a class="ad " href="https://wa.me/5585996354515?text=Oi%21%20Vi%20o%20portf%C3%B3lio%20da%20Creativy%20e%20quero%20adicionar%20%C3%81lbum%20de%20fotos%20%28%2B%20R%24%20150%2C00%29%20no%20meu%20convite."><b>Álbum de fotos</b><em>+ R$ 150,00</em><small>álbum só do seu evento</small><p>Os convidados postam as fotos da festa num álbum com o tema do convite. Depois você baixa tudo.</p><span>quero adicionar →</span></a><a class="ad " href="https://wa.me/5585996354515?text=Oi%21%20Vi%20o%20portf%C3%B3lio%20da%20Creativy%20e%20quero%20adicionar%20Mural%20de%20recados%20%28%2B%20R%24%20127%2C90%29%20no%20meu%20convite."><b>Mural de recados</b><em>+ R$ 127,90</em><small>mensagens dos convidados</small><p>Os convidados deixam recados que ficam num mural bonito, no tema da festa, visível para todos.</p><span>quero adicionar →</span></a><a class="ad combo" href="https://wa.me/5585996354515?text=Oi%21%20Vi%20o%20portf%C3%B3lio%20da%20Creativy%20e%20quero%20o%20combo%20%C3%81lbum%20de%20fotos%20%2B%20Mural%20de%20recados%20%28R%24%20230%2C00%29%20no%20meu%20convite."><b>Álbum + Mural</b><em>R$ 230,00</em><small>combo · economize R$ 47,90</small><p>Álbum de fotos e mural de recados juntos, no mesmo tema, por um valor menor do que separados.</p><span>quero adicionar →</span></a></div><section class="fin"><h2>Quer um convite assim?</h2><p>Me conta o seu tema e eu transformo em um convite inesquecível.</p><a class="cta" href="https://wa.me/5585996354515?text=Oi%21%20Vi%20o%20portf%C3%B3lio%20da%20Creativy%20e%20quero%20fazer%20o%20meu%20convite%21">Pedir o meu convite</a><div class="soc"><a href="https://www.instagram.com/creativyconvites/">@creativyconvites</a></div></section></div><div class="dm" id="dm"><div class="ph2"><div class="dmt">Versão de demonstração</div><button class="cl" id="dx" aria-label="Fechar">×</button><iframe id="fr" title="Convite" allow="autoplay; camera; microphone"></iframe><div class="av" id="av"><b>Aviso:</b> neste convite de demonstração a confirmação de presença não será enviada. Em um convite real, ela vai direto para o WhatsApp do anfitrião, por isso aqui você não será redirecionada.</div></div></div><div class="lb" id="lb"><div class="top"><b id="lbt"></b><button id="lbx" aria-label="Fechar">×</button></div><img id="lbi" alt=""><button class="go" id="lbg" hidden>Mexer no convite</button></div><div class="gl" id="gl"><div class="bx"><div class="gt"><b id="glt"></b><button id="glx" aria-label="Fechar">×</button></div><div class="mg" id="glg"></div></div></div><script>
+(function(){
+var ds=document.getElementById('ds'),cs=[].slice.call(ds.children),pn=document.getElementById('pn'),cur=-1;
+function fx(){var vc=ds.scrollLeft+ds.clientWidth/2,best=0,bd=1e9;
+ cs.forEach(function(c,i){var cc=c.offsetLeft+c.offsetWidth/2,d=(cc-vc)/(c.offsetWidth+18),ad=Math.min(Math.abs(d),2);
+  c.style.setProperty('--ry',Math.max(-60,Math.min(60,-d*38))+'deg');c.style.setProperty('--sc',1-.12*ad);c.style.setProperty('--op',1-.3*ad);
+  if(Math.abs(cc-vc)<bd){bd=Math.abs(cc-vc);best=i}});
+ cur=best;document.getElementById('dprev').disabled=best===0;document.getElementById('dnext').disabled=best===cs.length-1;
+ if(pn.classList.contains('on')&&pn.dataset.i!==String(best))closeP()}
+ds.addEventListener('scroll',function(){requestAnimationFrame(fx)},{passive:true});window.addEventListener('resize',fx);
+function go(i){i=Math.max(0,Math.min(cs.length-1,i));ds.scrollTo({left:cs[i].offsetLeft+cs[i].offsetWidth/2-ds.clientWidth/2,behavior:'smooth'})}
+document.getElementById('dprev').onclick=function(){go(cur-1)};document.getElementById('dnext').onclick=function(){go(cur+1)};
+function closeP(){pn.classList.remove('on');pn.style.height='0';delete pn.dataset.i}
+function openP(c){var i=+c.dataset.i;pn.dataset.i=i;
+ document.getElementById('pt').textContent=c.dataset.name+' · '+c.dataset.fmt;document.getElementById('pp').textContent=c.dataset.price;document.getElementById('pd').textContent=c.dataset.desc;
+ document.getElementById('pl').innerHTML=c.dataset.inc.split('|').map(function(x){return '<li>'+x+'</li>'}).join('');
+ pn.style.setProperty('--pc',c.dataset.col);var demo=c.dataset.demo;pn.dataset.demo=demo;
+ document.getElementById('ptry').hidden=!demo;document.getElementById('psoon').hidden=!!demo;
+ pn.classList.add('on');pn.style.height='330px';setTimeout(function(){pn.scrollIntoView({behavior:'smooth',block:'nearest'})},60)}
+cs.forEach(function(c){c.querySelector('.more').addEventListener('click',function(){
+ if(cs.indexOf(c)!==cur){go(cs.indexOf(c));setTimeout(function(){openP(c)},420)}else if(pn.dataset.i===c.dataset.i)closeP();else openP(c)})});
+document.getElementById('px').onclick=closeP;
+/* demo */
+var dm=document.getElementById('dm'),fr=document.getElementById('fr'),av=document.getElementById('av');
+function aviso(){av.classList.add('on');clearTimeout(aviso.t);aviso.t=setTimeout(function(){av.classList.remove('on')},6000)}
+document.getElementById('ptry').onclick=function(){var u=pn.dataset.demo;if(!u)return;av.classList.remove('on');dm.classList.add('on');fr.src=u};
+document.getElementById('dx').onclick=function(){dm.classList.remove('on');fr.src='about:blank'};
+fr.addEventListener('load',function(){try{var w=fr.contentWindow,d=fr.contentDocument;if(!w||!d)return;
+ var o=w.open;w.open=function(u){if(/wa\.me|whatsapp/i.test(String(u))){aviso();return null}return o.apply(w,arguments)};
+ d.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(a&&/wa\.me|whatsapp/i.test(a.href)){e.preventDefault();e.stopPropagation();aviso()}},true)}catch(e){}});
+/* detalhes -> valores */
+var hl=null,hlOff=null;
+function clearHl(){if(hl){hl.classList.remove('hl');hl=null}if(hlOff){window.removeEventListener('scroll',hlOff);window.removeEventListener('touchmove',hlOff);window.removeEventListener('wheel',hlOff);window.removeEventListener('keydown',hlOff);hlOff=null}}
+document.addEventListener('click',function(e){var d=e.target.closest('.det');if(!d)return;e.stopPropagation();
+ var row=document.querySelector('.row[data-f="'+d.dataset.f+'"]');if(!row)return;clearHl();hl=row;row.classList.add('hl');
+ row.scrollIntoView({behavior:'smooth',block:'center'});
+ var last=-1,still=0,iv=setInterval(function(){var y=window.scrollY;if(Math.abs(y-last)<1){if(++still>=3){clearInterval(iv);hlOff=function(){clearHl()};setTimeout(function(){window.addEventListener('scroll',hlOff,{passive:true});window.addEventListener('touchmove',hlOff,{passive:true});window.addEventListener('wheel',hlOff,{passive:true});window.addEventListener('keydown',hlOff)},120)}}else{still=0}last=y},100)},true);
+/* ver modelo por formato */
+var EX={};
+function addEx(f,n,img,demo){(EX[f]=EX[f]||[]).push({n:n,img:img,demo:demo||''})}
+var seen={};
+document.querySelectorAll('.mm').forEach(function(m){var d=m.dataset.demo;if(d)seen[d]=1;addEx(m.dataset.fmt,m.dataset.n,m.querySelector('img').src,d)});
+document.querySelectorAll('.dc').forEach(function(c){var im=c.querySelector('.dimg img');if(!im)return;var d=c.dataset.demo;if(d&&seen[d])return;addEx(c.dataset.fmt,c.dataset.name,im.src,d)});
+var gl=document.getElementById('gl');
+function openLb(e){document.getElementById('lbi').src=e.img;document.getElementById('lbt').textContent=e.n;lbd=e.demo;document.getElementById('lbg').hidden=!lbd;gl.classList.remove('on');lb.classList.add('on');lb.scrollTop=0}
+document.querySelectorAll('.vm').forEach(function(b){var L=EX[b.dataset.f];if(!L){b.hidden=true;return}
+ b.addEventListener('click',function(){if(L.length===1){openLb(L[0]);return}
+  document.getElementById('glt').textContent=b.dataset.f+' · modelos';
+  document.getElementById('glg').innerHTML=L.map(function(e,i){return '<figure class="mm" data-i="'+i+'"><div class="mi"><img src="'+e.img+'" alt=""></div><figcaption><b>'+e.n+'</b></figcaption></figure>'}).join('');
+  [].forEach.call(document.getElementById('glg').children,function(f,i){f.addEventListener('click',function(){openLb(L[i])})});
+  gl.classList.add('on')})});
+document.getElementById('glx').onclick=function(){gl.classList.remove('on')};gl.addEventListener('click',function(e){if(e.target===gl)gl.classList.remove('on')});
+/* estilos */
+var stys=document.querySelectorAll('.sty');
+stys.forEach(function(b){b.addEventListener('click',function(){var on=b.classList.contains('on');stys.forEach(function(x){x.classList.remove('on')});document.querySelectorAll('.spn').forEach(function(p){p.hidden=true});
+ if(!on){b.classList.add('on');var p=document.getElementById('sp-'+b.dataset.s);p.hidden=false;setTimeout(function(){p.scrollIntoView({behavior:'smooth',block:'start'})},60)}})});
+var lb=document.getElementById('lb'),lbd='';
+document.querySelectorAll('.mm').forEach(function(m){m.addEventListener('click',function(){
+ document.getElementById('lbi').src=m.querySelector('img').src;document.getElementById('lbt').textContent=m.dataset.n+' · '+m.dataset.fmt;lbd=m.dataset.demo;document.getElementById('lbg').hidden=!lbd;lb.classList.add('on');lb.scrollTop=0})});
+document.getElementById('lbx').onclick=function(){lb.classList.remove('on')};
+lb.addEventListener('click',function(e){if(e.target===lb)lb.classList.remove('on')});
+document.getElementById('lbg').onclick=function(){if(!lbd)return;lb.classList.remove('on');av.classList.remove('on');dm.classList.add('on');fr.src=lbd};
+fx();setTimeout(function(){go(1)},50);setTimeout(fx,500);
+})();
 </script>
-<script>
-(function(){var sh=document.getElementById('gsh');if(!sh)return;var ps=[].slice.call(sh.children),L=document.querySelector('.garr.gl'),R=document.querySelector('.garr.gr');
-function fx(){var vc=sh.clientWidth/2,best,bd=9e9;ps.forEach(function(p){var w=p.offsetWidth,c=p.offsetLeft+w/2-sh.scrollLeft,d=(c-vc)/(w+16),a=Math.min(Math.abs(d),2);p.style.setProperty('--ry',Math.max(-60,Math.min(60,d*36)).toFixed(1)+'deg');p.style.setProperty('--sc',(1-.12*a).toFixed(3));p.style.setProperty('--op',(1-.28*a).toFixed(2));p.style.zIndex=String(10-Math.round(a*3));if(a<bd){bd=a;best=p}});ps.forEach(function(p){p.classList.toggle('cen',p===best)});var m=sh.scrollWidth-sh.clientWidth;L.disabled=sh.scrollLeft<8;R.disabled=sh.scrollLeft>m-8}
-function go(d){sh.scrollBy({left:d*(ps[0].offsetWidth+16),behavior:'smooth'})}
-L.addEventListener('click',function(){go(-1)});R.addEventListener('click',function(){go(1)});
-sh.addEventListener('scroll',function(){requestAnimationFrame(fx)},{passive:true});window.addEventListener('resize',fx);window.addEventListener('load',fx);fx();setTimeout(fx,250);setTimeout(fx,900)})();
-</script>
-</body>
-</html>
